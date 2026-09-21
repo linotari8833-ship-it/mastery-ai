@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Mastery AI — Maîtrise l'IA. Construis avec l'IA.</title>
@@ -13,7 +16,7 @@
   --bg2:#0b1020;
   --card:#10172a;
   --card2:#131c31;
-  --border:#253252;
+  --border:#263352;
   --text:#f7f8ff;
   --muted:#9da8bd;
   --purple:#8065ff;
@@ -33,7 +36,12 @@ html{
 body{
   margin:0;
   background:
-    radial-gradient(circle at 50% -20%,#2c1d68 0,#0b1020 28%,#060812 62%);
+    radial-gradient(
+      circle at 50% -20%,
+      #2d1c68 0,
+      #0b1020 28%,
+      #060812 62%
+    );
   color:var(--text);
   font-family:
     Inter,
@@ -53,11 +61,16 @@ button{
   cursor:pointer;
 }
 
-/* NAVIGATION */
+
+/* =========================
+   NAVIGATION
+========================= */
 
 .nav{
   height:70px;
+
   padding:0 6%;
+
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -67,6 +80,7 @@ button{
   z-index:50;
 
   background:#060812e8;
+
   backdrop-filter:blur(18px);
 
   border-bottom:1px solid #ffffff10;
@@ -97,68 +111,106 @@ button{
 
 .nav-cta{
   padding:10px 15px;
+
   border-radius:10px;
-  background:linear-gradient(135deg,#8065ff,#694be7);
+
+  background:
+    linear-gradient(
+      135deg,
+      #8065ff,
+      #694be7
+    );
+
   color:white!important;
 }
 
-/* HERO */
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
   max-width:1200px;
+
   margin:auto;
+
   min-height:680px;
+
   padding:75px 6% 65px;
 
   display:grid;
-  grid-template-columns:1.05fr .95fr;
+
+  grid-template-columns:
+    1.05fr
+    .95fr;
+
   align-items:center;
+
   gap:40px;
 }
 
 .badge{
   display:inline-flex;
+
   align-items:center;
+
   gap:8px;
 
   padding:8px 13px;
+
   border-radius:999px;
 
   background:#171633;
+
   border:1px solid #443a83;
 
   color:#c9c0ff;
 
   font-size:11px;
+
   font-weight:850;
 }
 
 .green-dot{
   width:7px;
   height:7px;
+
   border-radius:50%;
+
   background:var(--green);
-  box-shadow:0 0 13px #54dfa0;
+
+  box-shadow:
+    0 0 13px #54dfa0;
 }
 
 .hero h1{
   margin:22px 0 18px;
 
-  font-size:clamp(48px,6vw,76px);
+  font-size:
+    clamp(
+      48px,
+      6vw,
+      76px
+    );
+
   line-height:.98;
+
   letter-spacing:-4px;
 }
 
 .gradient{
-  background:linear-gradient(
-    100deg,
-    #ffffff,
-    #a99aff 55%,
-    #7656ff
-  );
+  background:
+    linear-gradient(
+      100deg,
+      #ffffff,
+      #a99aff 55%,
+      #7656ff
+    );
 
   color:transparent;
+
   background-clip:text;
+
   -webkit-background-clip:text;
 }
 
@@ -168,12 +220,15 @@ button{
   color:#aeb7c9;
 
   font-size:16px;
+
   line-height:1.7;
 }
 
 .hero-pills{
   display:flex;
+
   flex-wrap:wrap;
+
   gap:9px;
 
   margin:24px 0;
@@ -185,6 +240,7 @@ button{
   border-radius:999px;
 
   background:#ffffff07;
+
   border:1px solid #ffffff13;
 
   color:#dfe4ef;
@@ -194,40 +250,57 @@ button{
 
 .price{
   font-size:45px;
+
   font-weight:950;
+
   letter-spacing:-2px;
 }
 
 .price span{
   font-size:12px;
+
   font-weight:600;
+
   color:#858fa4;
+
   letter-spacing:0;
 }
 
 .price-sub{
   color:#7e899e;
+
   font-size:12px;
-  margin:2px 0 20px;
+
+  margin:
+    2px
+    0
+    20px;
 }
 
 .actions{
   display:flex;
+
   flex-wrap:wrap;
+
   gap:10px;
 }
 
 .primary,
 .secondary{
   display:inline-flex;
+
   align-items:center;
+
   justify-content:center;
 
-  padding:14px 20px;
+  padding:
+    14px
+    20px;
 
   border-radius:12px;
 
   font-size:13px;
+
   font-weight:850;
 
   text-decoration:none;
@@ -237,29 +310,40 @@ button{
 
 .primary{
   border:0;
+
   color:white;
 
-  background:linear-gradient(
-    135deg,
-    #8c72ff,
-    #6849e8
-  );
+  background:
+    linear-gradient(
+      135deg,
+      #8c72ff,
+      #6849e8
+    );
 
   box-shadow:
     0 15px 40px #6d50ec35;
 }
 
 .primary:hover{
-  transform:translateY(-2px);
+  transform:
+    translateY(-2px);
 }
 
 .secondary{
   color:#e5e8f0;
-  border:1px solid #3b4660;
+
+  border:
+    1px
+    solid
+    #3b4660;
+
   background:#101522;
 }
 
-/* HERO VISUAL */
+
+/* =========================
+   HERO VISUAL
+========================= */
 
 .hero-visual{
   min-height:420px;
@@ -267,7 +351,9 @@ button{
   position:relative;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 }
 
@@ -280,6 +366,7 @@ button{
   border-radius:50%;
 
   background:#7053ff33;
+
   filter:blur(70px);
 }
 
@@ -304,7 +391,9 @@ button{
     0 35px 80px #0009,
     0 0 60px #6c54ff25;
 
-  transform:perspective(900px) rotateY(-5deg);
+  transform:
+    perspective(900px)
+    rotateY(-5deg);
 }
 
 .screen{
@@ -328,12 +417,15 @@ button{
   border:1px solid #5364a0;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 }
 
 .ai-logo{
   font-size:70px;
+
   font-weight:950;
 
   color:#9d8aff;
@@ -352,28 +444,38 @@ button{
 
   height:30px;
 
-  border-radius:0 0 20px 20px;
+  border-radius:
+    0
+    0
+    20px
+    20px;
 
   background:#151b2c;
+
   border:1px solid #39435d;
 }
 
 .tool{
   position:absolute;
 
-  padding:11px 15px;
+  padding:
+    11px
+    15px;
 
   border-radius:12px;
 
   background:#11172aee;
+
   border:1px solid #465489;
 
   color:#e6e9f3;
 
   font-size:11px;
+
   font-weight:800;
 
-  box-shadow:0 15px 35px #0006;
+  box-shadow:
+    0 15px 35px #0006;
 }
 
 .tool.one{
@@ -396,12 +498,20 @@ button{
   right:-40px;
 }
 
-/* GENERAL */
+
+/* =========================
+   GENERAL
+========================= */
 
 .wrap{
   max-width:1160px;
+
   margin:auto;
-  padding:0 6% 90px;
+
+  padding:
+    0
+    6%
+    90px;
 }
 
 .section{
@@ -413,28 +523,42 @@ button{
 }
 
 .section-title h2{
-  margin:0 0 7px;
+  margin:
+    0
+    0
+    7px;
 
   font-size:30px;
+
   letter-spacing:-1.5px;
 }
 
 .section-title p{
   margin:0;
 
-  max-width:700px;
+  max-width:750px;
 
   color:var(--muted);
 
   font-size:13px;
+
   line-height:1.6;
 }
 
-/* PROFILES */
+
+/* =========================
+   PROFILS
+========================= */
 
 .profile-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+
+  grid-template-columns:
+    repeat(
+      2,
+      1fr
+    );
+
   gap:14px;
 }
 
@@ -452,12 +576,15 @@ button{
 
   border:1px solid var(--border);
 
-  box-shadow:0 20px 50px #0002;
+  box-shadow:
+    0 20px 50px #0002;
 }
 
 .profile-top{
   display:flex;
+
   align-items:center;
+
   gap:12px;
 }
 
@@ -468,7 +595,9 @@ button{
   flex:none;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
   border-radius:50%;
@@ -480,11 +609,15 @@ button{
       #4937a4
     );
 
-  border:2px solid #a18eff55;
+  border:
+    2px
+    solid
+    #a18eff55;
 
   color:white;
 
   font-weight:900;
+
   font-size:19px;
 }
 
@@ -506,13 +639,30 @@ button{
     );
 }
 
+.avatar.success{
+  background:
+    linear-gradient(
+      135deg,
+      #9b7cff,
+      #5337bd
+    );
+
+  box-shadow:
+    0 0 25px #8065ff35;
+}
+
 .profile-top h3{
-  margin:0 0 3px;
+  margin:
+    0
+    0
+    3px;
+
   font-size:17px;
 }
 
 .age{
   color:#8e98ab;
+
   font-size:11px;
 }
 
@@ -521,46 +671,87 @@ button{
 
   margin-top:15px;
 
-  padding:5px 8px;
+  padding:
+    5px
+    8px;
 
   border-radius:6px;
 
   background:#211b40;
+
   border:1px solid #40346e;
 
   color:#bcaeff;
 
   font-size:9px;
+
   font-weight:900;
 
   text-transform:uppercase;
+}
+
+.success-label{
+  background:#292052;
+
+  border-color:#55458c;
+
+  color:#d0c6ff;
 }
 
 .card p{
   color:var(--muted);
 
   font-size:13px;
+
   line-height:1.6;
 }
 
 .goal{
   margin-top:15px;
+
   padding-top:13px;
 
-  border-top:1px solid #ffffff10;
+  border-top:
+    1px
+    solid
+    #ffffff10;
 
   color:#e2e5ed;
 
   font-size:12px;
+
   font-weight:750;
 }
 
-/* MOTIVATION */
+.success-profile{
+  border-color:#51448c;
+
+  background:
+    radial-gradient(
+      circle at 100% 0,
+      #3a2678,
+      transparent 45%
+    ),
+    linear-gradient(
+      180deg,
+      #15182d,
+      #0c1220
+    );
+}
+
+.success-goal{
+  color:#e4dbff;
+}
+
+
+/* =========================
+   MOTIVATION
+========================= */
 
 .motivation{
   margin-top:35px;
 
-  padding:35px;
+  padding:38px;
 
   border-radius:20px;
 
@@ -582,28 +773,45 @@ button{
 }
 
 .motivation h2{
-  margin:0 0 12px;
+  margin:
+    0
+    0
+    12px;
 
   font-size:32px;
+
   letter-spacing:-1.5px;
 }
 
 .motivation p{
-  max-width:720px;
+  max-width:750px;
 
-  margin:0 auto 20px;
+  margin:
+    0
+    auto
+    20px;
 
   color:#abb4c7;
 
   line-height:1.7;
+
   font-size:14px;
 }
 
-/* BENEFITS */
+
+/* =========================
+   BENEFITS
+========================= */
 
 .benefits{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+
+  grid-template-columns:
+    repeat(
+      4,
+      1fr
+    );
+
   gap:13px;
 }
 
@@ -612,7 +820,9 @@ button{
   height:40px;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
   border-radius:12px;
@@ -625,35 +835,137 @@ button{
 }
 
 .benefits h3{
-  margin:13px 0 7px;
+  margin:
+    13px
+    0
+    7px;
+
   font-size:16px;
 }
 
-/* JOURNEY */
+
+/* =========================
+   BUSINESS
+========================= */
+
+.business{
+  margin-top:60px;
+
+  padding:32px;
+
+  border-radius:20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #111a2f,
+      #0b1020
+    );
+
+  border:
+    1px
+    solid
+    #2f4266;
+}
+
+.business h2{
+  margin-top:0;
+
+  font-size:28px;
+
+  letter-spacing:-1px;
+}
+
+.business p{
+  color:var(--muted);
+
+  line-height:1.7;
+
+  font-size:14px;
+
+  max-width:780px;
+}
+
+.business-grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      1fr
+    );
+
+  gap:10px;
+
+  margin-top:22px;
+}
+
+.business-item{
+  padding:15px;
+
+  border-radius:12px;
+
+  background:#ffffff06;
+
+  border:1px solid #ffffff0e;
+}
+
+.business-item strong{
+  display:block;
+
+  margin-bottom:5px;
+
+  color:#e8eaff;
+
+  font-size:13px;
+}
+
+.business-item span{
+  color:#8994aa;
+
+  font-size:11px;
+
+  line-height:1.5;
+}
+
+
+/* =========================
+   JOURNEY
+========================= */
 
 .journey{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:14px;
-}
 
-.step{
-  position:relative;
+  grid-template-columns:
+    repeat(
+      3,
+      1fr
+    );
+
+  gap:14px;
 }
 
 .step-number{
   color:#a292ff;
 
   font-size:12px;
+
   font-weight:900;
 }
 
 .step h3{
   font-size:20px;
-  margin:10px 0 7px;
+
+  margin:
+    10px
+    0
+    7px;
 }
 
-/* MODULES */
+
+/* =========================
+   MODULES
+========================= */
 
 .progress-box{
   margin-bottom:15px;
@@ -663,11 +975,13 @@ button{
   border-radius:15px;
 
   background:#0c1220;
+
   border:1px solid var(--border);
 }
 
 .progress-head{
   display:flex;
+
   justify-content:space-between;
 
   margin-bottom:9px;
@@ -689,6 +1003,7 @@ button{
 
 .progress-fill{
   width:0;
+
   height:100%;
 
   background:
@@ -703,7 +1018,13 @@ button{
 
 .modules{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+
+  grid-template-columns:
+    repeat(
+      3,
+      1fr
+    );
+
   gap:12px;
 }
 
@@ -721,12 +1042,17 @@ button{
   color:#9683ff;
 
   font-size:10px;
+
   font-weight:900;
+
   letter-spacing:.7px;
 }
 
 .module h3{
-  margin:8px 0 5px;
+  margin:
+    8px
+    0
+    5px;
 
   font-size:14px;
 }
@@ -737,39 +1063,55 @@ button{
   color:#8792a7;
 
   font-size:11px;
+
   line-height:1.5;
 }
 
 .module button{
   margin-top:12px;
 
-  padding:8px 10px;
+  padding:
+    8px
+    10px;
 
   border-radius:8px;
 
-  border:1px solid #3b3267;
+  border:
+    1px
+    solid
+    #3b3267;
 
   background:#201a3f;
 
   color:#cfc6ff;
 
   font-size:10px;
+
   font-weight:800;
 }
 
 .module button.done{
   background:#14271f;
+
   border-color:#315541;
+
   color:#8be1b5;
 }
 
-/* PROMPTS */
+
+/* =========================
+   PROMPTS
+========================= */
 
 .prompt-section{
   margin-top:60px;
 
   display:grid;
-  grid-template-columns:.9fr 1.1fr;
+
+  grid-template-columns:
+    .9fr
+    1.1fr;
+
   gap:16px;
 }
 
@@ -791,6 +1133,7 @@ button{
   color:var(--muted);
 
   font-size:13px;
+
   line-height:1.6;
 }
 
@@ -810,6 +1153,7 @@ button{
   color:#d8d2ff;
 
   font-size:12px;
+
   line-height:1.6;
 
   white-space:pre-wrap;
@@ -818,26 +1162,37 @@ button{
 .copy{
   margin-top:13px;
 
-  padding:9px 12px;
+  padding:
+    9px
+    12px;
 
   border-radius:8px;
 
-  border:1px solid #40366f;
+  border:
+    1px
+    solid
+    #40366f;
 
   background:#211b42;
 
   color:#d7d0ff;
 
   font-size:11px;
+
   font-weight:800;
 }
 
-/* FINAL */
+
+/* =========================
+   FINAL
+========================= */
 
 .final{
   margin-top:60px;
 
-  padding:55px 25px;
+  padding:
+    55px
+    25px;
 
   border-radius:24px;
 
@@ -855,34 +1210,47 @@ button{
 }
 
 .final h2{
-  margin:0 0 12px;
+  margin:
+    0
+    0
+    12px;
 
   font-size:38px;
+
   letter-spacing:-2px;
 }
 
 .final p{
   max-width:700px;
 
-  margin:0 auto 23px;
+  margin:
+    0
+    auto
+    23px;
 
   color:#aeb7c9;
 
   font-size:14px;
+
   line-height:1.7;
 }
 
-/* MODAL */
+
+/* =========================
+   MODAL PAIEMENT
+========================= */
 
 .modal{
   display:none;
 
   position:fixed;
+
   inset:0;
 
   z-index:100;
 
   align-items:center;
+
   justify-content:center;
 
   padding:20px;
@@ -900,6 +1268,7 @@ button{
   position:relative;
 
   width:100%;
+
   max-width:450px;
 
   padding:28px;
@@ -910,13 +1279,15 @@ button{
 
   border:1px solid #36425e;
 
-  box-shadow:0 30px 100px #000;
+  box-shadow:
+    0 30px 100px #000;
 }
 
 .close{
   position:absolute;
 
   right:15px;
+
   top:12px;
 
   border:0;
@@ -936,26 +1307,33 @@ button{
   color:var(--muted);
 
   font-size:13px;
+
   line-height:1.6;
 }
 
 .payment-price{
   font-size:35px;
+
   font-weight:950;
 
-  margin:18px 0;
+  margin:
+    18px
+    0;
 }
 
 .payment-error{
   display:none;
 
-  margin:12px 0;
+  margin:
+    12px
+    0;
 
   padding:11px;
 
   border-radius:9px;
 
   background:#321a1e;
+
   border:1px solid #69343b;
 
   color:#ffb8c0;
@@ -971,18 +1349,21 @@ button{
   width:100%;
 
   display:flex;
+
   justify-content:center;
+
   align-items:center;
 
   padding:14px;
 
   border-radius:11px;
 
-  background:linear-gradient(
-    135deg,
-    #8b72ff,
-    #6849e7
-  );
+  background:
+    linear-gradient(
+      135deg,
+      #8b72ff,
+      #6849e7
+    );
 
   color:white;
 
@@ -993,10 +1374,20 @@ button{
   border:0;
 }
 
-footer{
-  padding:30px 20px;
 
-  border-top:1px solid #ffffff0d;
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  padding:
+    30px
+    20px;
+
+  border-top:
+    1px
+    solid
+    #ffffff0d;
 
   text-align:center;
 
@@ -1005,12 +1396,16 @@ footer{
   font-size:11px;
 }
 
-/* MOBILE */
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:900px){
 
   .hero{
     grid-template-columns:1fr;
+
     text-align:center;
   }
 
@@ -1029,12 +1424,17 @@ footer{
 
   .profile-grid,
   .benefits,
+  .business-grid,
   .journey{
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:
+      1fr
+      1fr;
   }
 
   .modules{
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:
+      1fr
+      1fr;
   }
 
   .prompt-section{
@@ -1046,7 +1446,9 @@ footer{
 @media(max-width:600px){
 
   .nav{
-    padding:0 5%;
+    padding:
+      0
+      5%;
   }
 
   .nav-right a:not(.nav-cta){
@@ -1059,11 +1461,13 @@ footer{
 
   .hero h1{
     font-size:47px;
+
     letter-spacing:-3px;
   }
 
   .laptop{
     width:290px;
+
     height:190px;
   }
 
@@ -1073,6 +1477,7 @@ footer{
 
   .profile-grid,
   .benefits,
+  .business-grid,
   .journey,
   .modules{
     grid-template-columns:1fr;
@@ -1085,19 +1490,25 @@ footer{
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- NAVIGATION -->
+<!-- =========================
+     NAVIGATION
+========================= -->
 
 <nav class="nav">
 
   <div class="logo">
+
     Mastery <span>AI</span>
+
   </div>
+
 
   <div class="nav-right">
 
@@ -1109,15 +1520,17 @@ footer{
       Profils
     </a>
 
-    <a href="#faq">
-      FAQ
+    <a href="#business">
+      Business
     </a>
 
     <a
       href="#"
       class="nav-cta"
       onclick="openPay();return false;">
+
       Commencer maintenant
+
     </a>
 
   </div>
@@ -1125,67 +1538,84 @@ footer{
 </nav>
 
 
-<!-- HERO -->
+
+<!-- =========================
+     HERO
+========================= -->
 
 <header class="hero">
 
+
   <div>
+
 
     <span class="badge">
 
       <span class="green-dot"></span>
 
-      24 MODULES · 10 € · ACCÈS À LA FORMATION
+      24 MODULES · 10 € · FORMATION IA
 
     </span>
 
 
+
     <h1>
 
-      Tu utilises déjà l’IA.<br>
+      Apprends l'IA.<br>
 
       <span class="gradient">
-        Apprends à vraiment la maîtriser.
+
+        Construis. Crée. Développe.
+
       </span>
 
     </h1>
 
 
+
     <p class="hero-text">
 
-      Mastery AI t'apprend à passer de simples questions
-      à de vrais projets : prompts, documents, images,
-      code, automatisation et création de projets avec l'IA.
+      L'IA ne sert pas seulement à poser des questions.
+      Apprends à t'en servir pour créer des services,
+      automatiser des tâches, développer des produits
+      numériques et explorer de nouvelles sources de revenus.
 
     </p>
+
 
 
     <div class="hero-pills">
 
       <span class="pill">
-        ✓ Pas besoin d'être expert
+        ✓ Apprendre l'IA
       </span>
 
       <span class="pill">
-        ✓ 24 étapes progressives
+        ✓ Créer des services
       </span>
 
       <span class="pill">
-        ✓ Exercices pratiques
+        ✓ Automatiser
       </span>
 
       <span class="pill">
-        ✓ Bibliothèque de prompts
+        ✓ Développer des revenus
       </span>
 
     </div>
+
 
 
     <div class="price">
 
-      10 € <span>paiement unique</span>
+      10 €
+
+      <span>
+        paiement unique
+      </span>
 
     </div>
+
 
     <div class="price-sub">
 
@@ -1194,7 +1624,9 @@ footer{
     </div>
 
 
+
     <div class="actions">
+
 
       <button
         class="primary"
@@ -1205,6 +1637,7 @@ footer{
       </button>
 
 
+
       <a
         class="secondary"
         href="#programme">
@@ -1213,50 +1646,66 @@ footer{
 
       </a>
 
+
     </div>
 
+
   </div>
+
 
 
   <!-- VISUEL -->
 
   <div class="hero-visual">
 
+
     <div class="glow"></div>
+
 
 
     <div class="laptop">
 
+
       <div class="screen">
 
         <div class="ai-logo">
+
           AI
+
         </div>
 
       </div>
 
+
       <div class="base"></div>
 
+
     </div>
+
 
 
     <div class="tool one">
       ✦ ChatGPT
     </div>
 
+
     <div class="tool two">
       ✦ Claude
     </div>
+
 
     <div class="tool three">
       ⚡ Automatisation
     </div>
 
+
     <div class="tool four">
-      ◈ Création
+      💰 Business IA
     </div>
 
+
   </div>
+
 
 </header>
 
@@ -1265,25 +1714,34 @@ footer{
 <main class="wrap">
 
 
-<!-- PROFILS -->
+<!-- =========================
+     PROFILS
+========================= -->
 
 <section
   class="section"
   id="profils">
 
+
   <div class="section-title">
+
 
     <h2>
       Des profils différents. Un même objectif.
     </h2>
 
+
     <p>
-      Mastery AI est conçu pour apprendre à utiliser
-      l'IA de manière concrète, quel que soit ton niveau
-      ou ton projet.
+
+      L'IA peut être utilisée pour apprendre,
+      créer, automatiser ou développer une activité.
+      Voici quatre exemples de parcours possibles.
+
     </p>
 
+
   </div>
+
 
 
   <div class="profile-grid">
@@ -1293,11 +1751,14 @@ footer{
 
     <div class="card">
 
+
       <div class="profile-top">
+
 
         <div class="avatar">
           L
         </div>
+
 
         <div>
 
@@ -1311,7 +1772,9 @@ footer{
 
         </div>
 
+
       </div>
+
 
 
       <span class="example">
@@ -1319,13 +1782,16 @@ footer{
       </span>
 
 
+
       <p>
 
-        Apprendre à utiliser l'IA pour créer
-        ses premiers projets, automatiser certaines
-        tâches et développer ses compétences numériques.
+        Apprendre à utiliser l'IA pour créer ses
+        premiers projets, développer ses compétences
+        numériques et découvrir comment transformer
+        une compétence en opportunité.
 
       </p>
+
 
 
       <div class="goal">
@@ -1334,19 +1800,23 @@ footer{
 
       </div>
 
+
     </div>
 
 
 
-    <!-- MARC ADULTE -->
+    <!-- MARC -->
 
     <div class="card">
 
+
       <div class="profile-top">
+
 
         <div class="avatar adult">
           M
         </div>
+
 
         <div>
 
@@ -1360,7 +1830,9 @@ footer{
 
         </div>
 
+
       </div>
+
 
 
       <span class="example">
@@ -1368,20 +1840,23 @@ footer{
       </span>
 
 
+
       <p>
 
-        Découvrir comment intégrer l'IA dans
-        son activité, gagner du temps, automatiser
-        certaines tâches et explorer de nouvelles idées.
+        Intégrer l'IA dans son activité pour automatiser
+        certaines tâches, gagner du temps et identifier
+        de nouvelles opportunités commerciales.
 
       </p>
 
 
+
       <div class="goal">
 
-        🚀 Utiliser l'IA dans son activité
+        🚀 Développer son activité avec l'IA
 
       </div>
+
 
     </div>
 
@@ -1391,11 +1866,14 @@ footer{
 
     <div class="card">
 
+
       <div class="profile-top">
+
 
         <div class="avatar woman">
           E
         </div>
+
 
         <div>
 
@@ -1409,7 +1887,9 @@ footer{
 
         </div>
 
+
       </div>
+
 
 
       <span class="example">
@@ -1417,21 +1897,83 @@ footer{
       </span>
 
 
+
       <p>
 
         Utiliser l'IA pour créer du contenu,
-        développer une idée, apprendre de nouveaux
-        outils et transformer progressivement une idée
-        en projet concret.
+        développer des produits numériques et
+        transformer progressivement une idée
+        en projet.
 
       </p>
 
 
+
       <div class="goal">
 
-        💡 Transformer une idée en projet
+        💡 Créer une activité autour de ses idées
 
       </div>
+
+
+    </div>
+
+
+
+    <!-- ALEX -->
+
+    <div class="card success-profile">
+
+
+      <div class="profile-top">
+
+
+        <div class="avatar success">
+          A
+        </div>
+
+
+        <div>
+
+          <h3>
+            Alex
+          </h3>
+
+          <span class="age">
+            40 ans · Entrepreneur IA
+          </span>
+
+        </div>
+
+
+      </div>
+
+
+
+      <span class="example success-label">
+        Profil fictif · Exemple
+      </span>
+
+
+
+      <p>
+
+        Imagine un entrepreneur qui apprend à utiliser
+        l'IA pour automatiser, créer des services,
+        développer des solutions pour des entreprises
+        et construire progressivement une activité
+        autour de ces compétences.
+
+      </p>
+
+
+
+      <div class="goal success-goal">
+
+        💰 Transformer l'IA en source de revenus
+
+      </div>
+
 
     </div>
 
@@ -1439,56 +1981,74 @@ footer{
   </div>
 
 
+
   <!-- MOTIVATION -->
 
   <div class="motivation">
 
+
     <h2>
-      Tu n'as pas besoin d'être expert.
+
+      Et si l'IA devenait une compétence qui te rapporte ?
+
     </h2>
+
+
 
     <p>
 
-      Tu as simplement besoin de commencer.
-      Une compétence après l'autre, tu peux apprendre
-      à utiliser l'IA pour créer, automatiser,
-      résoudre des problèmes et transformer tes idées
-      en projets concrets.
+      Apprends d'abord à maîtriser les outils.
+      Ensuite, découvre comment transformer tes compétences
+      en services, produits et projets. Les revenus ne sont
+      jamais garantis, mais une compétence maîtrisée peut
+      ouvrir de nouvelles possibilités.
 
     </p>
+
+
 
     <button
       class="primary"
       onclick="openPay()">
 
-      Commencer maintenant — 10 €
+      Découvrir comment commencer — 10 €
 
     </button>
 
+
   </div>
+
 
 </section>
 
 
 
-<!-- POURQUOI -->
+<!-- =========================
+     POURQUOI
+========================= -->
 
 <section class="section">
 
+
   <div class="section-title">
+
 
     <h2>
       Pourquoi commencer Mastery AI ?
     </h2>
 
+
     <p>
 
-      Ce n'est pas seulement apprendre des outils.
-      C'est apprendre une méthode que tu peux réutiliser.
+      Pas seulement apprendre des outils :
+      apprendre à les transformer en compétences
+      utiles et en projets concrets.
 
     </p>
 
+
   </div>
+
 
 
   <div class="benefits">
@@ -1501,64 +2061,69 @@ footer{
       </div>
 
       <h3>
-        Concret
+        Apprendre
       </h3>
 
       <p>
-        Des explications simples et des applications
-        directement utilisables.
+        Comprends les fondamentaux de l'intelligence
+        artificielle et des outils modernes.
       </p>
 
     </div>
 
 
+
     <div class="card">
 
       <div class="icon">
-        🎯
+        🛠️
       </div>
 
       <h3>
-        À ton rythme
+        Construire
       </h3>
 
       <p>
-        Avance quand tu veux et retrouve ta progression.
+        Utilise l'IA pour créer du contenu,
+        du code, des services et des projets.
       </p>
 
     </div>
 
 
+
     <div class="card">
 
       <div class="icon">
-        ★
+        ⚙️
       </div>
 
       <h3>
-        Orienté projets
+        Automatiser
       </h3>
 
       <p>
-        Apprends en construisant et en expérimentant.
+        Découvre comment faire travailler l'IA
+        avec des workflows et des automatisations.
       </p>
 
     </div>
 
 
+
     <div class="card">
 
       <div class="icon">
-        🚀
+        💰
       </div>
 
       <h3>
-        Prépare ton avenir
+        Monétiser
       </h3>
 
       <p>
-        Développe une compétence numérique
-        utile dans de nombreux domaines.
+        Explore différentes façons de transformer
+        une compétence IA en offre ou en projet.
       </p>
 
     </div>
@@ -1566,111 +2131,251 @@ footer{
 
   </div>
 
+
 </section>
 
 
 
-<!-- PARCOURS -->
+<!-- =========================
+     BUSINESS IA
+========================= -->
+
+<section
+  class="business"
+  id="business">
+
+
+  <h2>
+
+    L'objectif : passer de l'IA à un véritable projet
+
+  </h2>
+
+
+
+  <p>
+
+    Mastery AI ne s'arrête pas à « comment utiliser ChatGPT ».
+    Tu découvres progressivement comment utiliser l'IA
+    pour créer de la valeur et explorer différents modèles
+    économiques.
+
+  </p>
+
+
+
+  <div class="business-grid">
+
+
+    <div class="business-item">
+
+      <strong>
+        🤖 Services IA
+      </strong>
+
+      <span>
+        Aider des entreprises à résoudre certains problèmes
+        grâce à l'intelligence artificielle.
+      </span>
+
+    </div>
+
+
+
+    <div class="business-item">
+
+      <strong>
+        ⚙️ Automatisation
+      </strong>
+
+      <span>
+        Construire des workflows qui permettent
+        de gagner du temps.
+      </span>
+
+    </div>
+
+
+
+    <div class="business-item">
+
+      <strong>
+        📦 Produits numériques
+      </strong>
+
+      <span>
+        Créer des ressources, outils ou contenus
+        pouvant être distribués en ligne.
+      </span>
+
+    </div>
+
+
+
+    <div class="business-item">
+
+      <strong>
+        🚀 Agence IA
+      </strong>
+
+      <span>
+        Découvrir comment construire une offre
+        autour de solutions IA.
+      </span>
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+<!-- =========================
+     PARCOURS
+========================= -->
 
 <section class="section">
 
+
   <div class="section-title">
+
 
     <h2>
       Ton parcours en 3 étapes
     </h2>
 
+
     <p>
-      Une méthode simple pour passer de la découverte
-      à la pratique.
+
+      Une progression simple :
+      comprendre → créer → monétiser.
+
     </p>
 
+
   </div>
+
 
 
   <div class="journey">
 
 
-    <div class="card step">
+    <div class="card">
+
 
       <span class="step-number">
         01 — COMPRENDRE
       </span>
 
+
       <h3>
-        Les fondamentaux
+        Maîtriser les fondamentaux
       </h3>
 
+
       <p>
-        IA, prompts, documents et bonnes méthodes
-        pour apprendre à bien utiliser les outils.
+
+        IA, prompts, documents, assistants
+        et bonnes méthodes pour travailler
+        efficacement avec les outils.
+
       </p>
+
 
     </div>
 
 
-    <div class="card step">
+
+    <div class="card">
+
 
       <span class="step-number">
         02 — CRÉER
       </span>
 
+
       <h3>
-        Passer à l'action
+        Construire avec l'IA
       </h3>
 
+
       <p>
-        Contenu, images, code, assistants
-        et premiers workflows.
+
+        Images, contenu, code, automatisations,
+        produits numériques et premiers projets.
+
       </p>
+
 
     </div>
 
 
-    <div class="card step">
+
+    <div class="card">
+
 
       <span class="step-number">
-        03 — CONSTRUIRE
+        03 — MONÉTISER
       </span>
 
+
       <h3>
-        Ton projet final
+        Explorer les opportunités
       </h3>
 
+
       <p>
-        Pars d'une idée et transforme-la
-        en projet IA concret.
+
+        Services, offres, agence, produits
+        numériques et projet final.
+
       </p>
+
 
     </div>
 
 
   </div>
+
 
 </section>
 
 
 
-<!-- MODULES -->
+<!-- =========================
+     MODULES
+========================= -->
 
 <section
   class="section"
   id="programme">
 
+
   <div class="section-title">
+
 
     <h2>
       Les 24 modules
     </h2>
 
+
     <p>
-      Un parcours complet, structuré et pratique.
+
+      Un parcours complet allant des fondamentaux
+      jusqu'au business et au projet final.
+
     </p>
+
 
   </div>
 
 
+
   <div class="progress-box">
+
 
     <div class="progress-head">
 
@@ -1678,11 +2383,13 @@ footer{
         Ta progression
       </span>
 
+
       <span id="progressText">
         0 / 24 terminés · 0%
       </span>
 
     </div>
+
 
 
     <div class="progress-bar">
@@ -1694,7 +2401,9 @@ footer{
 
     </div>
 
+
   </div>
+
 
 
   <div
@@ -1702,34 +2411,65 @@ footer{
     id="modules">
   </div>
 
+
 </section>
 
 
 
-<!-- PROMPTS -->
+<!-- =========================
+     PROMPTS
+========================= -->
 
 <section class="prompt-section">
 
+
   <div class="prompt-info">
+
 
     <h2>
       🎁 Bibliothèque de prompts
     </h2>
 
+
     <p>
 
-      Apprends à construire des prompts plus précis
-      et plus utiles. Voici un aperçu d'une des
-      méthodes que tu retrouveras dans Mastery AI.
+      Apprends à donner de meilleures instructions
+      aux IA et à construire des prompts réutilisables
+      pour tes projets.
 
     </p>
+
+
+    <p>
+
+      La formation va ensuite beaucoup plus loin :
+      automatisation, création de contenu, code,
+      services IA et business.
+
+    </p>
+
 
   </div>
 
 
+
   <div class="prompt-box">
 
-    <code id="prompt1">Agis comme un expert. Identifie mon objectif, les informations manquantes, les contraintes et le format idéal. Puis propose une solution structurée et indique ce qui doit être vérifié.</code>
+
+    <code id="prompt1">
+
+Agis comme un expert dans mon domaine.
+
+1. Identifie mon objectif.
+2. Identifie les informations qui te manquent.
+3. Pose-moi uniquement les questions nécessaires.
+4. Propose plusieurs solutions.
+5. Compare leurs avantages et limites.
+6. Donne-moi un plan d'action concret.
+7. Indique ce qui doit être vérifié par un humain.
+
+    </code>
+
 
 
     <button
@@ -1740,37 +2480,48 @@ footer{
 
     </button>
 
+
   </div>
+
 
 </section>
 
 
 
-<!-- FINAL -->
+<!-- =========================
+     FINAL CTA
+========================= -->
 
 <section class="final">
 
+
   <h2>
-    Tu n'as pas besoin d'attendre.
+
+    Ton prochain projet peut commencer ici.
+
   </h2>
+
 
 
   <p>
 
-    Chaque compétence commence par une première étape.
-    Apprends progressivement, teste ce que tu apprends
-    et construis tes propres projets avec l'IA.
+    Tu n'as pas besoin d'être expert en IA pour commencer.
+    Apprends progressivement, teste ce que tu apprends,
+    construis des projets et découvre comment transformer
+    tes compétences en opportunités.
 
   </p>
+
 
 
   <button
     class="primary"
     onclick="openPay()">
 
-    Commencer la formation — 10 € →
+    Commencer Mastery AI — 10 € →
 
   </button>
+
 
 </section>
 
@@ -1779,22 +2530,34 @@ footer{
 
 
 
-<footer id="faq">
+<!-- =========================
+     FOOTER
+========================= -->
 
-  Mastery AI · Formation éducative ·
+<footer>
+
+  Mastery AI · Maîtrise l'IA. Construis avec l'IA.
+
+  <br><br>
+
+  Les profils présentés sont des exemples fictifs.
   Les résultats financiers ne sont pas garantis.
 
 </footer>
 
 
 
-<!-- MODALE PAIEMENT -->
+<!-- =========================
+     MODALE PAIEMENT
+========================= -->
 
 <div
   class="modal"
   id="paymentModal">
 
+
   <div class="modal-box">
+
 
     <button
       class="close"
@@ -1805,9 +2568,11 @@ footer{
     </button>
 
 
+
     <h2>
       Commencer Mastery AI
     </h2>
+
 
 
     <p>
@@ -1818,9 +2583,11 @@ footer{
     </p>
 
 
+
     <div class="payment-price">
       10 €
     </div>
+
 
 
     <div
@@ -1828,10 +2595,9 @@ footer{
       id="paymentError">
 
       Le lien de paiement n'est pas encore configuré.
-      Le bouton est volontairement bloqué pour éviter
-      qu'il ouvre à nouveau le site.
 
     </div>
+
 
 
     <a
@@ -1844,14 +2610,21 @@ footer{
     </a>
 
 
-    <p style="font-size:10px;color:#6f798d">
 
-      Le paiement sera connecté lorsque tu auras
-      ton véritable lien de paiement marchand.
+    <p
+      style="
+        font-size:10px;
+        color:#6f798d;
+      ">
+
+      Paiement sécurisé via ton prestataire
+      lorsque le lien marchand sera connecté.
 
     </p>
 
+
   </div>
+
 
 </div>
 
@@ -1862,18 +2635,21 @@ footer{
 
 /* =====================================================
    PAIEMENT
-   =====================================================
+===================================================== */
 
-   Quand tu auras ton vrai lien de paiement,
-   remplace simplement :
 
-   const PAYMENT_URL = "";
+/*
+   IMPORTANT :
 
-   par :
+   Quand tu auras ton VRAI lien de paiement marchand,
+   colle-le entre les guillemets ci-dessous.
 
-   const PAYMENT_URL = "TON_LIEN_DE_PAIEMENT";
+   Exemple :
 
-   ===================================================== */
+   const PAYMENT_URL =
+   "https://ton-vrai-lien-de-paiement.com";
+
+*/
 
 
 const PAYMENT_URL = "";
@@ -1881,8 +2657,8 @@ const PAYMENT_URL = "";
 
 
 /* =====================================================
-   MODULES
-   ===================================================== */
+   LES 24 MODULES
+===================================================== */
 
 
 const modules = [
@@ -1939,9 +2715,16 @@ const modules = [
 
 
 
+/* =====================================================
+   PROGRESSION
+===================================================== */
+
+
 let completed =
   JSON.parse(
-    localStorage.getItem("masteryAIProgress") || "[]"
+    localStorage.getItem(
+      "masteryAIProgress"
+    ) || "[]"
   );
 
 
@@ -1949,58 +2732,79 @@ let completed =
 function renderModules(){
 
   const container =
-    document.getElementById("modules");
+    document.getElementById(
+      "modules"
+    );
+
 
   container.innerHTML = "";
 
 
-  modules.forEach((name,index)=>{
-
-    const card =
-      document.createElement("div");
-
-    card.className = "module";
+  modules.forEach(
+    (name,index)=>{
 
 
-    const isDone =
-      completed.includes(index);
+      const card =
+        document.createElement(
+          "div"
+        );
 
 
-    card.innerHTML = `
-
-      <div class="module-number">
-
-        MODULE ${String(index+1).padStart(2,"0")}
-
-      </div>
+      card.className =
+        "module";
 
 
-      <h3>
-        ${name}
-      </h3>
+      const isDone =
+        completed.includes(
+          index
+        );
 
 
-      <p>
-        Leçon, méthode pratique et exercice.
-      </p>
+      card.innerHTML = `
+
+        <div class="module-number">
+
+          MODULE
+          ${String(index+1).padStart(2,"0")}
+
+        </div>
 
 
-      <button
-        class="${isDone ? "done" : ""}"
-        onclick="toggleModule(${index})">
-
-        ${isDone
-          ? "✓ Terminé"
-          : "Marquer comme terminé"}
-
-      </button>
-
-    `;
+        <h3>
+          ${name}
+        </h3>
 
 
-    container.appendChild(card);
+        <p>
 
-  });
+          Leçon, méthode pratique
+          et exercice.
+
+        </p>
+
+
+        <button
+          class="${isDone ? "done" : ""}"
+          onclick="toggleModule(${index})">
+
+          ${
+            isDone
+              ? "✓ Terminé"
+              : "Marquer comme terminé"
+          }
+
+        </button>
+
+      `;
+
+
+      container.appendChild(
+        card
+      );
+
+
+    }
+  );
 
 
   updateProgress();
@@ -2011,23 +2815,34 @@ function renderModules(){
 
 function toggleModule(index){
 
-  if(completed.includes(index)){
+  if(
+    completed.includes(
+      index
+    )
+  ){
 
     completed =
       completed.filter(
-        item => item !== index
+        item =>
+          item !== index
       );
 
-  }else{
+  }
 
-    completed.push(index);
+  else{
+
+    completed.push(
+      index
+    );
 
   }
 
 
   localStorage.setItem(
     "masteryAIProgress",
-    JSON.stringify(completed)
+    JSON.stringify(
+      completed
+    )
   );
 
 
@@ -2041,7 +2856,9 @@ function updateProgress(){
 
   const percentage =
     Math.round(
-      completed.length / modules.length * 100
+      completed.length /
+      modules.length *
+      100
     );
 
 
@@ -2067,15 +2884,19 @@ function updateProgress(){
 
 
 /* =====================================================
-   PAIEMENT
-   ===================================================== */
+   MODALE PAIEMENT
+===================================================== */
 
 
 function openPay(){
 
   document
-    .getElementById("paymentModal")
-    .classList.add("show");
+    .getElementById(
+      "paymentModal"
+    )
+    .classList.add(
+      "show"
+    );
 
 
   configurePayment();
@@ -2087,8 +2908,12 @@ function openPay(){
 function closePay(){
 
   document
-    .getElementById("paymentModal")
-    .classList.remove("show");
+    .getElementById(
+      "paymentModal"
+    )
+    .classList.remove(
+      "show"
+    );
 
 }
 
@@ -2116,23 +2941,30 @@ function configurePayment(){
     button.href =
       PAYMENT_URL;
 
+
     button.target =
       "_blank";
+
 
     button.rel =
       "noopener noreferrer";
 
 
-    button.onclick = null;
+    button.onclick =
+      null;
+
 
     error.classList.remove(
       "show"
     );
 
-  }else{
+  }
+
+  else{
 
     button.href =
       "#";
+
 
     button.removeAttribute(
       "target"
@@ -2158,8 +2990,8 @@ function configurePayment(){
 
 
 /* =====================================================
-   COPIER PROMPT
-   ===================================================== */
+   COPIER UN PROMPT
+===================================================== */
 
 
 function copyPrompt(){
@@ -2171,26 +3003,32 @@ function copyPrompt(){
 
 
   navigator.clipboard
-    .writeText(text)
-    .then(()=>{
+    .writeText(
+      text
+    )
+    .then(
+      ()=>{
 
-      alert(
-        "Prompt copié !"
-      );
+        alert(
+          "Prompt copié !"
+        );
 
-    });
+      }
+    );
 
 }
 
 
 
 /* =====================================================
-   FERMER MODALE EN CLIQUANT À L'EXTÉRIEUR
-   ===================================================== */
+   FERMER EN CLIQUANT À L'EXTÉRIEUR
+===================================================== */
 
 
 document
-  .getElementById("paymentModal")
+  .getElementById(
+    "paymentModal"
+  )
   .addEventListener(
     "click",
     function(event){
@@ -2208,7 +3046,10 @@ document
 
 
 
-/* INITIALISATION */
+/* =====================================================
+   INITIALISATION
+===================================================== */
+
 
 renderModules();
 
@@ -2217,5 +3058,7 @@ configurePayment();
 
 </script>
 
+
 </body>
+
 </html>
