@@ -1,1040 +1,2219 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mastery AI</title><style>:root{--bg:#07080b;--card:#11141a;--line:#272c36;--text:#f6f7fb;--muted:#a4aab7;--a:#785cff}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif}.nav{height:68px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;padding:0 6%;position:sticky;top:0;background:#07080bf0;backdrop-filter:blur(12px)}.logo{font-size:20px;font-weight:900}.logo b{color:#9b87ff}.nav a{color:#ddd;text-decoration:none;font-size:13px}.hero{text-align:center;max-width:1000px;margin:auto;padding:75px 6% 55px}.badge{display:inline-block;padding:7px 12px;border-radius:99px;background:#17122e;border:1px solid #382d67;color:#bcaeff;font-size:11px;font-weight:800}h1{font-size:clamp(44px,8vw,78px);line-height:.98;letter-spacing:-4px;margin:18px 0}.grad{background:linear-gradient(90deg,#fff,#9d8aff);color:transparent;background-clip:text}.hero p{max-width:720px;margin:auto;color:var(--muted);line-height:1.7}.price{font-size:40px;font-weight:900;margin:25px 0 12px}.price small{font-size:13px;color:var(--muted)}button,.buy{border:0;border-radius:12px;padding:14px 20px;font-weight:850;cursor:pointer;text-decoration:none;display:inline-block}.buy,button{background:var(--a);color:#fff}.secondary{background:#11141a!important;border:1px solid var(--line);margin-left:8px}.wrap{max-width:1100px;margin:auto;padding:20px 6% 70px}.features,.modules{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:19px}.card p{color:var(--muted);font-size:13px;line-height:1.55}.section{margin-top:45px}.bar{height:8px;background:#1c2028;border-radius:99px;overflow:hidden}.bar i{display:block;height:100%;background:var(--a);width:0}.prog{color:var(--muted);font-size:12px;margin:9px 0 15px}.done{background:#14251d;border:1px solid #315441;color:#91e0b7;padding:8px 10px;border-radius:9px;font-size:12px}.prompt{margin-top:45px;background:#15122a;border:1px solid #322a58;border-radius:18px;padding:22px}.prompt code{display:block;background:#090b0f;border:1px solid var(--line);border-radius:10px;padding:13px;color:#ddd5ff;font-size:12px;margin-top:12px;line-height:1.5}.copy{margin-top:8px;background:#211a43}.modal{display:none;position:fixed;inset:0;background:#000b;align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}.box{max-width:450px;width:100%;background:#11141a;border:1px solid var(--line);border-radius:18px;padding:24px}.box p{color:var(--muted);line-height:1.6;font-size:13px}.close{float:right;background:none;color:#aaa;padding:0;font-size:25px}footer{text-align:center;color:#747b88;border-top:1px solid var(--line);padding:28px;font-size:11px}@media(max-width:600px){.secondary{margin:10px 0 0}}
-</style></head><body><nav class="nav"><div class="logo">Mastery <b>AI</b></div><a href="#programme">Programme</a></nav><header class="hero"><span class="badge">FORMATION COMPLÈTE · 24 MODULES</span><h1>Maîtrise l’IA.<br><span class="grad">Construis avec l’IA.</span></h1><p>Apprends à utiliser l’intelligence artificielle comme un véritable outil de travail : prompts, documents, contenu, images, code, automatisation, agents et création de services.</p><div class="price">10 € <small>paiement unique</small></div><button onclick="openPay()">Acheter la formation — 10 €</button><a class="buy secondary" href="#programme">Voir le programme</a></header><main class="wrap"><section><h2>Ce que tu vas apprendre</h2><div class="features"><div class="card"><b>🧠 24 modules</b><p>Des bases de l’IA jusqu’au projet final.</p></div><div class="card"><b>⚡ Workflows</b><p>Des méthodes pour produire, vérifier et améliorer plus efficacement.</p></div><div class="card"><b>💬 Prompts</b><p>Des prompts prêts à copier et adapter.</p></div><div class="card"><b>🚀 Projet final</b><p>Construis un petit service utilisant l’IA.</p></div></div></section><section class="section" id="programme"><h2>Les 24 modules</h2><div class="bar"><i id="bar"></i></div><div class="prog" id="prog">0 / 24 terminés</div><div class="modules" id="modules"></div></section><section class="prompt"><h2>Bibliothèque de prompts</h2><code id="p1">Agis comme un expert. Identifie mon objectif, les informations manquantes, les contraintes et le format idéal. Puis propose une solution structurée et indique ce qui doit être vérifié.</code><button class="copy" onclick="copy('p1')">Copier</button><code id="p2">Analyse cette idée selon le problème, le client cible, la concurrence, les coûts, la distribution, les risques et le test minimal.</code><button class="copy" onclick="copy('p2')">Copier</button></section></main><footer>Mastery AI · Formation éducative · Les résultats financiers ne sont pas garantis.</footer><div class="modal" id="modal"><div class="box"><button class="close" onclick="closePay()">×</button><h2>Mastery AI — 10 €</h2><p>Le bouton ci-dessous est prêt à recevoir ton lien de paiement permanent. Ne mets jamais ton IBAN ou tes identifiants bancaires dans le code.</p><a id="pay" class="buy" style="width:100%;text-align:center" href="#" target="_blank">Continuer vers le paiement</a><p>Après la mise en place d’un vrai paiement marchand avec confirmation, l’accès aux 24 modules pourra être automatisé.</p></div></div><script>const titles=['Comprendre l’intelligence artificielle','Savoir parler à une IA','La méthode du prompt professionnel','Faire travailler l’IA en plusieurs étapes','ChatGPT comme assistant personnel','Travailler avec des documents','L’IA pour la création de contenu','Créer des images avec l’IA','L’IA pour le code','Claude et les agents de travail','Automatiser une entreprise','Gagner de l’argent avec l’IA','Le service IA pour entreprise','Créer une agence IA','Vendre des produits numériques','Créer une formation en ligne','Vendre une formation','Créer une offre','Recherche d’idées business','L’IA et la productivité','Les erreurs à éviter','Le workflow professionnel IA','Le projet final','La compétence la plus importante'];let done=JSON.parse(localStorage.getItem('masteryAI')||'[]');function render(){let x=document.getElementById('modules');x.innerHTML='';titles.forEach((t,i)=>{let d=document.createElement('div');d.className='card';let ok=done.includes(i);d.innerHTML='<small style="color:#aa98ff;font-weight:800">MODULE '+String(i+1).padStart(2,'0')+'</small><h3>'+t+'</h3><p>Leçon, application pratique et exercice.</p><button class="done">'+(ok?'✓ Terminé':'Marquer comme terminé')+'</button>';d.querySelector('button').onclick=()=>{ok?done=done.filter(n=>n!==i):done.push(i);localStorage.setItem('masteryAI',JSON.stringify(done));render()};x.appendChild(d)});let p=Math.round(done.length/24*100);document.getElementById('bar').style.width=p+'%';document.getElementById('prog').textContent=done.length+' / 24 terminés · '+p+'%'}function openPay(){document.getElementById('modal').classList.add('show')}function closePay(){document.getElementById('modal').classList.remove('show')}function copy(id){navigator.clipboard.writeText(document.getElementById(id).innerText);alert('Prompt copié !')}render();</script></body></html>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Mastery AI — Maîtrise l’IA. Construis avec l’IA.</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mastery AI — Maîtrise l'IA. Construis avec l'IA.</title>
 
 <style>
+
 :root{
-  --bg:#07080c;
-  --card:#10131a;
-  --card2:#151925;
-  --line:#272d39;
-  --text:#f7f8fc;
-  --muted:#a6adbb;
-  --accent:#8065ff;
-  --accent2:#a38eff;
-  --green:#55d99a;
+  --bg:#060812;
+  --bg2:#0b1020;
+  --card:#10172a;
+  --card2:#131c31;
+  --border:#253252;
+  --text:#f7f8ff;
+  --muted:#9da8bd;
+  --purple:#8065ff;
+  --purple2:#a58fff;
+  --blue:#4d8dff;
+  --green:#54dfa0;
 }
 
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
-html{scroll-behavior:smooth}
+html{
+  scroll-behavior:smooth;
+}
 
 body{
   margin:0;
   background:
-    radial-gradient(circle at 50% -10%,#24194e 0,#0b0c12 30%,var(--bg) 60%);
+    radial-gradient(circle at 50% -20%,#2c1d68 0,#0b1020 28%,#060812 62%);
   color:var(--text);
-  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
 }
+
+button,
+a{
+  font-family:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+/* NAVIGATION */
 
 .nav{
   height:70px;
-  border-bottom:1px solid #ffffff12;
+  padding:0 6%;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:0 6%;
+
   position:sticky;
   top:0;
-  z-index:20;
-  background:#07080ce8;
+  z-index:50;
+
+  background:#060812e8;
   backdrop-filter:blur(18px);
+
+  border-bottom:1px solid #ffffff10;
 }
 
 .logo{
+  font-size:22px;
   font-weight:900;
-  font-size:21px;
-  letter-spacing:-.7px;
+  letter-spacing:-1px;
 }
 
-.logo span{color:var(--accent2)}
+.logo span{
+  color:var(--purple2);
+}
 
-.nav a{
-  color:#dce0e9;
+.nav-right{
+  display:flex;
+  align-items:center;
+  gap:25px;
+}
+
+.nav-right a{
+  color:#d9ddea;
   text-decoration:none;
   font-size:13px;
   font-weight:700;
 }
 
-.hero{
-  max-width:1100px;
-  margin:auto;
-  padding:78px 6% 65px;
-  text-align:center;
+.nav-cta{
+  padding:10px 15px;
+  border-radius:10px;
+  background:linear-gradient(135deg,#8065ff,#694be7);
+  color:white!important;
 }
 
-.eyebrow{
-  display:inline-flex;
-  gap:8px;
+/* HERO */
+
+.hero{
+  max-width:1200px;
+  margin:auto;
+  min-height:680px;
+  padding:75px 6% 65px;
+
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
   align-items:center;
-  border:1px solid #443779;
-  background:#16112b;
-  color:#c7bbff;
+  gap:40px;
+}
+
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+
   padding:8px 13px;
   border-radius:999px;
+
+  background:#171633;
+  border:1px solid #443a83;
+
+  color:#c9c0ff;
+
   font-size:11px;
   font-weight:850;
-  letter-spacing:.3px;
 }
 
-.dot{
+.green-dot{
   width:7px;
   height:7px;
   border-radius:50%;
   background:var(--green);
-  box-shadow:0 0 14px #55d99a;
+  box-shadow:0 0 13px #54dfa0;
 }
 
 .hero h1{
-  font-size:clamp(48px,8vw,88px);
-  line-height:.96;
-  letter-spacing:-5px;
   margin:22px 0 18px;
+
+  font-size:clamp(48px,6vw,76px);
+  line-height:.98;
+  letter-spacing:-4px;
 }
 
-.grad{
-  background:linear-gradient(100deg,#fff 10%,#b9aaff 48%,#8065ff);
+.gradient{
+  background:linear-gradient(
+    100deg,
+    #ffffff,
+    #a99aff 55%,
+    #7656ff
+  );
+
   color:transparent;
   background-clip:text;
   -webkit-background-clip:text;
 }
 
-.hero>p{
-  max-width:760px;
-  margin:0 auto;
-  color:#b3b9c6;
-  font-size:17px;
+.hero-text{
+  max-width:650px;
+
+  color:#aeb7c9;
+
+  font-size:16px;
   line-height:1.7;
 }
 
-.promise{
+.hero-pills{
   display:flex;
-  justify-content:center;
-  gap:10px;
   flex-wrap:wrap;
-  margin:25px 0 20px;
+  gap:9px;
+
+  margin:24px 0;
 }
 
 .pill{
-  border:1px solid #ffffff12;
-  background:#ffffff07;
+  padding:9px 11px;
+
   border-radius:999px;
-  padding:8px 11px;
-  color:#dfe3ec;
-  font-size:12px;
+
+  background:#ffffff07;
+  border:1px solid #ffffff13;
+
+  color:#dfe4ef;
+
+  font-size:11px;
 }
 
 .price{
-  font-size:42px;
+  font-size:45px;
   font-weight:950;
   letter-spacing:-2px;
-  margin:25px 0 4px;
 }
 
-.price small{
+.price span{
   font-size:12px;
   font-weight:600;
-  color:var(--muted);
+  color:#858fa4;
   letter-spacing:0;
 }
 
-.subprice{
-  color:#858c99;
+.price-sub{
+  color:#7e899e;
   font-size:12px;
-  margin-bottom:22px;
+  margin:2px 0 20px;
 }
 
 .actions{
   display:flex;
-  justify-content:center;
-  gap:10px;
   flex-wrap:wrap;
+  gap:10px;
 }
 
-.buy,button{
-  border:0;
-  border-radius:12px;
-  padding:14px 20px;
-  font-weight:850;
-  cursor:pointer;
-  text-decoration:none;
+.primary,
+.secondary{
   display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:14px 20px;
+
+  border-radius:12px;
+
+  font-size:13px;
+  font-weight:850;
+
+  text-decoration:none;
+
+  transition:.2s;
+}
+
+.primary{
+  border:0;
+  color:white;
+
+  background:linear-gradient(
+    135deg,
+    #8c72ff,
+    #6849e8
+  );
+
+  box-shadow:
+    0 15px 40px #6d50ec35;
+}
+
+.primary:hover{
+  transform:translateY(-2px);
+}
+
+.secondary{
+  color:#e5e8f0;
+  border:1px solid #3b4660;
+  background:#101522;
+}
+
+/* HERO VISUAL */
+
+.hero-visual{
+  min-height:420px;
+
+  position:relative;
+
+  display:flex;
   align-items:center;
   justify-content:center;
 }
 
-.buy{
-  background:linear-gradient(135deg,#8b72ff,#6e53e8);
-  color:#fff;
-  box-shadow:0 12px 35px #6e53e833;
+.glow{
+  position:absolute;
+
+  width:320px;
+  height:320px;
+
+  border-radius:50%;
+
+  background:#7053ff33;
+  filter:blur(70px);
 }
 
-.buy:hover{
-  transform:translateY(-1px);
+.laptop{
+  position:relative;
+
+  width:390px;
+  height:250px;
+
+  border-radius:18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #242d48,
+      #0d1222
+    );
+
+  border:1px solid #566084;
+
+  box-shadow:
+    0 35px 80px #0009,
+    0 0 60px #6c54ff25;
+
+  transform:perspective(900px) rotateY(-5deg);
 }
 
-button:not(.secondary){
-  background:linear-gradient(135deg,#8b72ff,#6e53e8);
-  color:white;
-  box-shadow:0 12px 35px #6e53e833;
+.screen{
+  position:absolute;
+
+  left:18px;
+  right:18px;
+  top:17px;
+  bottom:25px;
+
+  border-radius:9px;
+
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      #4433a8,
+      #11162b 50%,
+      #080b15
+    );
+
+  border:1px solid #5364a0;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
-.secondary{
-  background:#11151d;
-  border:1px solid var(--line);
-  color:#e6e9f0;
+.ai-logo{
+  font-size:70px;
+  font-weight:950;
+
+  color:#9d8aff;
+
+  text-shadow:
+    0 0 25px #826aff,
+    0 0 55px #826aff66;
 }
+
+.base{
+  position:absolute;
+
+  left:-35px;
+  right:-35px;
+  bottom:-24px;
+
+  height:30px;
+
+  border-radius:0 0 20px 20px;
+
+  background:#151b2c;
+  border:1px solid #39435d;
+}
+
+.tool{
+  position:absolute;
+
+  padding:11px 15px;
+
+  border-radius:12px;
+
+  background:#11172aee;
+  border:1px solid #465489;
+
+  color:#e6e9f3;
+
+  font-size:11px;
+  font-weight:800;
+
+  box-shadow:0 15px 35px #0006;
+}
+
+.tool.one{
+  top:20px;
+  left:0;
+}
+
+.tool.two{
+  top:100px;
+  right:-20px;
+}
+
+.tool.three{
+  bottom:25px;
+  left:-25px;
+}
+
+.tool.four{
+  bottom:70px;
+  right:-40px;
+}
+
+/* GENERAL */
 
 .wrap{
-  max-width:1120px;
+  max-width:1160px;
   margin:auto;
-  padding:10px 6% 80px;
+  padding:0 6% 90px;
 }
 
 .section{
-  margin-top:55px;
+  margin-top:65px;
 }
 
 .section-title{
-  display:flex;
-  align-items:end;
-  justify-content:space-between;
-  gap:20px;
-  margin-bottom:17px;
+  margin-bottom:20px;
 }
 
 .section-title h2{
-  font-size:28px;
-  letter-spacing:-1.2px;
-  margin:0;
+  margin:0 0 7px;
+
+  font-size:30px;
+  letter-spacing:-1.5px;
 }
 
 .section-title p{
-  color:var(--muted);
-  font-size:13px;
   margin:0;
-  max-width:520px;
-  line-height:1.5;
+
+  max-width:700px;
+
+  color:var(--muted);
+
+  font-size:13px;
+  line-height:1.6;
 }
 
-.features{
+/* PROFILES */
+
+.profile-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+
+.card{
+  padding:20px;
+
+  border-radius:17px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #11192c,
+      #0c1220
+    );
+
+  border:1px solid var(--border);
+
+  box-shadow:0 20px 50px #0002;
+}
+
+.profile-top{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.avatar{
+  width:54px;
+  height:54px;
+
+  flex:none;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #8065ff,
+      #4937a4
+    );
+
+  border:2px solid #a18eff55;
+
+  color:white;
+
+  font-weight:900;
+  font-size:19px;
+}
+
+.avatar.adult{
+  background:
+    linear-gradient(
+      135deg,
+      #4e85ff,
+      #263c91
+    );
+}
+
+.avatar.woman{
+  background:
+    linear-gradient(
+      135deg,
+      #b66cff,
+      #7139a8
+    );
+}
+
+.profile-top h3{
+  margin:0 0 3px;
+  font-size:17px;
+}
+
+.age{
+  color:#8e98ab;
+  font-size:11px;
+}
+
+.example{
+  display:inline-block;
+
+  margin-top:15px;
+
+  padding:5px 8px;
+
+  border-radius:6px;
+
+  background:#211b40;
+  border:1px solid #40346e;
+
+  color:#bcaeff;
+
+  font-size:9px;
+  font-weight:900;
+
+  text-transform:uppercase;
+}
+
+.card p{
+  color:var(--muted);
+
+  font-size:13px;
+  line-height:1.6;
+}
+
+.goal{
+  margin-top:15px;
+  padding-top:13px;
+
+  border-top:1px solid #ffffff10;
+
+  color:#e2e5ed;
+
+  font-size:12px;
+  font-weight:750;
+}
+
+/* MOTIVATION */
+
+.motivation{
+  margin-top:35px;
+
+  padding:35px;
+
+  border-radius:20px;
+
+  background:
+    radial-gradient(
+      circle at 80% 30%,
+      #382479,
+      transparent 40%
+    ),
+    linear-gradient(
+      135deg,
+      #15102d,
+      #0c1322
+    );
+
+  border:1px solid #3a3261;
+
+  text-align:center;
+}
+
+.motivation h2{
+  margin:0 0 12px;
+
+  font-size:32px;
+  letter-spacing:-1.5px;
+}
+
+.motivation p{
+  max-width:720px;
+
+  margin:0 auto 20px;
+
+  color:#abb4c7;
+
+  line-height:1.7;
+  font-size:14px;
+}
+
+/* BENEFITS */
+
+.benefits{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:13px;
 }
 
-.card{
-  background:linear-gradient(180deg,#121620,#0e1117);
-  border:1px solid var(--line);
-  border-radius:17px;
-  padding:19px;
-}
-
-.card h3{
-  margin:9px 0 7px;
-  font-size:17px;
-}
-
-.card p{
-  color:var(--muted);
-  font-size:13px;
-  line-height:1.55;
-  margin:0;
-}
-
 .icon{
-  font-size:22px;
+  width:40px;
+  height:40px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:12px;
+
+  background:#211b46;
+
+  border:1px solid #43377a;
+
+  font-size:19px;
 }
+
+.benefits h3{
+  margin:13px 0 7px;
+  font-size:16px;
+}
+
+/* JOURNEY */
 
 .journey{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:13px;
+  gap:14px;
 }
 
-.journey .card{
+.step{
   position:relative;
-  overflow:hidden;
 }
 
-.number{
+.step-number{
+  color:#a292ff;
+
   font-size:12px;
-  color:#a896ff;
   font-weight:900;
 }
 
-.journey h3{
+.step h3{
   font-size:20px;
+  margin:10px 0 7px;
 }
 
-.journey .card:after{
-  content:"";
-  position:absolute;
-  right:-35px;
-  top:-35px;
-  width:100px;
-  height:100px;
-  border-radius:50%;
-  background:#8065ff12;
+/* MODULES */
+
+.progress-box{
+  margin-bottom:15px;
+
+  padding:17px;
+
+  border-radius:15px;
+
+  background:#0c1220;
+  border:1px solid var(--border);
+}
+
+.progress-head{
+  display:flex;
+  justify-content:space-between;
+
+  margin-bottom:9px;
+
+  color:#aab3c4;
+
+  font-size:12px;
+}
+
+.progress-bar{
+  height:8px;
+
+  overflow:hidden;
+
+  border-radius:999px;
+
+  background:#20283a;
+}
+
+.progress-fill{
+  width:0;
+  height:100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      #6e52ed,
+      #a48eff
+    );
+
+  transition:.3s;
 }
 
 .modules{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:13px;
+  gap:12px;
 }
 
-.progress-box{
-  background:#0d1016;
-  border:1px solid var(--line);
-  border-radius:15px;
-  padding:15px;
-  margin-bottom:14px;
-}
+.module{
+  padding:16px;
 
-.bar{
-  height:8px;
-  background:#1d222c;
-  border-radius:99px;
-  overflow:hidden;
-}
+  border-radius:14px;
 
-.bar i{
-  display:block;
-  height:100%;
-  width:0;
-  background:linear-gradient(90deg,#6f55e9,#a18dff);
-  transition:.3s;
-}
+  background:#0f1627;
 
-.prog{
-  color:#aeb4c0;
-  font-size:12px;
-  margin-top:9px;
+  border:1px solid #202c45;
 }
 
 .module-number{
-  color:#9e8cff;
+  color:#9683ff;
+
   font-size:10px;
   font-weight:900;
   letter-spacing:.7px;
 }
 
-.done{
-  background:#14251d!important;
-  border:1px solid #315441!important;
-  color:#91e0b7!important;
-  box-shadow:none!important;
-  padding:9px 11px;
-  border-radius:9px;
-  font-size:12px;
-  margin-top:14px;
+.module h3{
+  margin:8px 0 5px;
+
+  font-size:14px;
 }
 
-.module-btn{
-  background:#201a3e!important;
-  border:1px solid #392f65!important;
-  color:#cfc6ff!important;
-  box-shadow:none!important;
-  padding:9px 11px;
-  border-radius:9px;
-  font-size:12px;
-  margin-top:14px;
+.module p{
+  margin:0;
+
+  color:#8792a7;
+
+  font-size:11px;
+  line-height:1.5;
 }
 
-.prompt{
-  margin-top:55px;
-  background:linear-gradient(135deg,#17132c,#11141b);
-  border:1px solid #342c58;
-  border-radius:20px;
+.module button{
+  margin-top:12px;
+
+  padding:8px 10px;
+
+  border-radius:8px;
+
+  border:1px solid #3b3267;
+
+  background:#201a3f;
+
+  color:#cfc6ff;
+
+  font-size:10px;
+  font-weight:800;
+}
+
+.module button.done{
+  background:#14271f;
+  border-color:#315541;
+  color:#8be1b5;
+}
+
+/* PROMPTS */
+
+.prompt-section{
+  margin-top:60px;
+
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:16px;
+}
+
+.prompt-info{
   padding:25px;
+
+  border-radius:18px;
+
+  background:#10172a;
+
+  border:1px solid var(--border);
 }
 
-.prompt h2{
+.prompt-info h2{
   margin-top:0;
 }
 
-.prompt p{
+.prompt-info p{
   color:var(--muted);
+
   font-size:13px;
+  line-height:1.6;
 }
 
-.prompt code{
+.prompt-box{
+  padding:20px;
+
+  border-radius:18px;
+
+  background:#080d18;
+
+  border:1px solid #2b3857;
+}
+
+.prompt-box code{
   display:block;
-  background:#090b10;
-  border:1px solid var(--line);
-  border-radius:11px;
-  padding:14px;
-  color:#ded8ff;
+
+  color:#d8d2ff;
+
   font-size:12px;
-  margin-top:12px;
-  line-height:1.55;
+  line-height:1.6;
+
   white-space:pre-wrap;
 }
 
 .copy{
-  margin-top:8px;
-  background:#241c49!important;
-  color:#dcd5ff!important;
-  border:1px solid #3a2f68!important;
-  box-shadow:none!important;
+  margin-top:13px;
+
   padding:9px 12px;
-  font-size:12px;
+
+  border-radius:8px;
+
+  border:1px solid #40366f;
+
+  background:#211b42;
+
+  color:#d7d0ff;
+
+  font-size:11px;
+  font-weight:800;
 }
 
-.final-cta{
-  margin-top:55px;
-  text-align:center;
-  padding:48px 25px;
-  border:1px solid #342c58;
+/* FINAL */
+
+.final{
+  margin-top:60px;
+
+  padding:55px 25px;
+
   border-radius:24px;
-  background:radial-gradient(circle at 50% 0,#251b50,#11141a 60%);
+
+  text-align:center;
+
+  background:
+    radial-gradient(
+      circle at 50% 0,
+      #30206c,
+      transparent 55%
+    ),
+    #0d1321;
+
+  border:1px solid #38315f;
 }
 
-.final-cta h2{
-  font-size:36px;
-  letter-spacing:-1.8px;
-  margin:0 0 10px;
+.final h2{
+  margin:0 0 12px;
+
+  font-size:38px;
+  letter-spacing:-2px;
 }
 
-.final-cta p{
-  color:var(--muted);
-  max-width:650px;
-  margin:0 auto 22px;
-  line-height:1.6;
+.final p{
+  max-width:700px;
+
+  margin:0 auto 23px;
+
+  color:#aeb7c9;
+
   font-size:14px;
+  line-height:1.7;
 }
+
+/* MODAL */
 
 .modal{
   display:none;
+
   position:fixed;
   inset:0;
-  background:#000c;
+
+  z-index:100;
+
   align-items:center;
   justify-content:center;
+
   padding:20px;
-  z-index:50;
+
+  background:#000c;
+
+  backdrop-filter:blur(8px);
 }
 
 .modal.show{
   display:flex;
 }
 
-.box{
-  max-width:460px;
+.modal-box{
+  position:relative;
+
   width:100%;
-  background:#11151d;
-  border:1px solid #343a48;
+  max-width:450px;
+
+  padding:28px;
+
   border-radius:20px;
-  padding:25px;
-  box-shadow:0 25px 80px #000;
-}
 
-.box h2{
-  margin:0 35px 9px 0;
-}
+  background:#101725;
 
-.box p{
-  color:var(--muted);
-  line-height:1.6;
-  font-size:13px;
+  border:1px solid #36425e;
+
+  box-shadow:0 30px 100px #000;
 }
 
 .close{
   position:absolute;
-  margin-left:385px;
-  margin-top:-10px;
-  background:none!important;
-  color:#aeb4c0;
-  box-shadow:none!important;
-  padding:5px;
-  font-size:26px;
+
+  right:15px;
+  top:12px;
+
+  border:0;
+
+  background:transparent;
+
+  color:#8f99ac;
+
+  font-size:27px;
 }
 
-.payment-note{
-  font-size:11px!important;
-  color:#747c89!important;
-  margin-top:14px;
+.modal-box h2{
+  margin-top:0;
+}
+
+.modal-box p{
+  color:var(--muted);
+
+  font-size:13px;
+  line-height:1.6;
+}
+
+.payment-price{
+  font-size:35px;
+  font-weight:950;
+
+  margin:18px 0;
 }
 
 .payment-error{
   display:none;
-  background:#32191d;
-  border:1px solid #673038;
-  color:#ffb9c0;
-  border-radius:10px;
-  padding:10px;
-  font-size:12px;
+
   margin:12px 0;
+
+  padding:11px;
+
+  border-radius:9px;
+
+  background:#321a1e;
+  border:1px solid #69343b;
+
+  color:#ffb8c0;
+
+  font-size:11px;
 }
 
 .payment-error.show{
   display:block;
 }
 
+.payment-button{
+  width:100%;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  padding:14px;
+
+  border-radius:11px;
+
+  background:linear-gradient(
+    135deg,
+    #8b72ff,
+    #6849e7
+  );
+
+  color:white;
+
+  text-decoration:none;
+
+  font-weight:850;
+
+  border:0;
+}
+
 footer{
+  padding:30px 20px;
+
+  border-top:1px solid #ffffff0d;
+
   text-align:center;
-  color:#747b88;
-  border-top:1px solid var(--line);
-  padding:28px;
+
+  color:#707b90;
+
   font-size:11px;
 }
 
-@media(max-width:850px){
-  .features{
-    grid-template-columns:repeat(2,1fr);
+/* MOBILE */
+
+@media(max-width:900px){
+
+  .hero{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .hero-text{
+    margin:auto;
+  }
+
+  .hero-pills,
+  .actions{
+    justify-content:center;
+  }
+
+  .hero-visual{
+    min-height:350px;
+  }
+
+  .profile-grid,
+  .benefits,
+  .journey{
+    grid-template-columns:1fr 1fr;
   }
 
   .modules{
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:1fr 1fr;
   }
 
-  .journey{
+  .prompt-section{
     grid-template-columns:1fr;
   }
+
 }
 
 @media(max-width:600px){
-  .features,
-  .modules{
-    grid-template-columns:1fr;
+
+  .nav{
+    padding:0 5%;
   }
 
-  .hero h1{
-    letter-spacing:-3px;
-  }
-
-  .section-title{
-    display:block;
-  }
-
-  .section-title p{
-    margin-top:8px;
-  }
-
-  .close{
-    margin-left:calc(100% - 45px);
+  .nav-right a:not(.nav-cta){
+    display:none;
   }
 
   .hero{
     padding-top:55px;
   }
+
+  .hero h1{
+    font-size:47px;
+    letter-spacing:-3px;
+  }
+
+  .laptop{
+    width:290px;
+    height:190px;
+  }
+
+  .tool{
+    display:none;
+  }
+
+  .profile-grid,
+  .benefits,
+  .journey,
+  .modules{
+    grid-template-columns:1fr;
+  }
+
+  .final h2{
+    font-size:30px;
+  }
+
 }
+
 </style>
 </head>
 
+
 <body>
 
+
+<!-- NAVIGATION -->
+
 <nav class="nav">
-  <div class="logo">Mastery <span>AI</span></div>
-  <a href="#programme">Voir le programme ↓</a>
+
+  <div class="logo">
+    Mastery <span>AI</span>
+  </div>
+
+  <div class="nav-right">
+
+    <a href="#programme">
+      Programme
+    </a>
+
+    <a href="#profils">
+      Profils
+    </a>
+
+    <a href="#faq">
+      FAQ
+    </a>
+
+    <a
+      href="#"
+      class="nav-cta"
+      onclick="openPay();return false;">
+      Commencer maintenant
+    </a>
+
+  </div>
+
 </nav>
+
+
+<!-- HERO -->
 
 <header class="hero">
 
-  <span class="eyebrow">
-    <span class="dot"></span>
-    24 MODULES · 10 € · ACCÈS À LA FORMATION
-  </span>
+  <div>
 
-  <h1>
-    Tu utilises déjà l’IA.<br>
-    <span class="grad">Apprends à vraiment la maîtriser.</span>
-  </h1>
+    <span class="badge">
 
-  <p>
-    Mastery AI te montre comment passer de simples questions à de vrais workflows :
-    prompts, documents, images, code, agents, automatisation et création de projets avec l’IA.
-  </p>
+      <span class="green-dot"></span>
 
-  <div class="promise">
-    <span class="pill">✓ Pas besoin d’être expert</span>
-    <span class="pill">✓ 24 étapes progressives</span>
-    <span class="pill">✓ Exercices pratiques</span>
-    <span class="pill">✓ Bibliothèque de prompts</span>
+      24 MODULES · 10 € · ACCÈS À LA FORMATION
+
+    </span>
+
+
+    <h1>
+
+      Tu utilises déjà l’IA.<br>
+
+      <span class="gradient">
+        Apprends à vraiment la maîtriser.
+      </span>
+
+    </h1>
+
+
+    <p class="hero-text">
+
+      Mastery AI t'apprend à passer de simples questions
+      à de vrais projets : prompts, documents, images,
+      code, automatisation et création de projets avec l'IA.
+
+    </p>
+
+
+    <div class="hero-pills">
+
+      <span class="pill">
+        ✓ Pas besoin d'être expert
+      </span>
+
+      <span class="pill">
+        ✓ 24 étapes progressives
+      </span>
+
+      <span class="pill">
+        ✓ Exercices pratiques
+      </span>
+
+      <span class="pill">
+        ✓ Bibliothèque de prompts
+      </span>
+
+    </div>
+
+
+    <div class="price">
+
+      10 € <span>paiement unique</span>
+
+    </div>
+
+    <div class="price-sub">
+
+      Commence par les bases. Termine avec ton propre projet IA.
+
+    </div>
+
+
+    <div class="actions">
+
+      <button
+        class="primary"
+        onclick="openPay()">
+
+        Commencer Mastery AI — 10 € →
+
+      </button>
+
+
+      <a
+        class="secondary"
+        href="#programme">
+
+        Découvrir les 24 modules
+
+      </a>
+
+    </div>
+
   </div>
 
-  <div class="price">
-    10 € <small>paiement unique</small>
-  </div>
 
-  <div class="subprice">
-    Commence par les bases. Termine avec ton propre projet IA.
-  </div>
+  <!-- VISUEL -->
 
-  <div class="actions">
-    <button onclick="openPay()">
-      Commencer Mastery AI — 10 €
-    </button>
+  <div class="hero-visual">
 
-    <a class="buy secondary" href="#programme">
-      Découvrir les 24 modules
-    </a>
+    <div class="glow"></div>
+
+
+    <div class="laptop">
+
+      <div class="screen">
+
+        <div class="ai-logo">
+          AI
+        </div>
+
+      </div>
+
+      <div class="base"></div>
+
+    </div>
+
+
+    <div class="tool one">
+      ✦ ChatGPT
+    </div>
+
+    <div class="tool two">
+      ✦ Claude
+    </div>
+
+    <div class="tool three">
+      ⚡ Automatisation
+    </div>
+
+    <div class="tool four">
+      ◈ Création
+    </div>
+
   </div>
 
 </header>
 
+
+
 <main class="wrap">
 
-<section class="section">
+
+<!-- PROFILS -->
+
+<section
+  class="section"
+  id="profils">
 
   <div class="section-title">
-    <h2>Pourquoi commencer ?</h2>
+
+    <h2>
+      Des profils différents. Un même objectif.
+    </h2>
 
     <p>
-      Le but n’est pas de collectionner des outils.
-      C’est de savoir quoi demander à l’IA, comment l’utiliser
-      et comment transformer une idée en résultat.
+      Mastery AI est conçu pour apprendre à utiliser
+      l'IA de manière concrète, quel que soit ton niveau
+      ou ton projet.
     </p>
-  </div>
-
-  <div class="features">
-
-    <div class="card">
-      <div class="icon">🧠</div>
-      <h3>Comprendre</h3>
-      <p>
-        Les bases pour savoir ce que l’IA peut réellement faire
-        et comment bien l’utiliser.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="icon">⚡</div>
-      <h3>Produire</h3>
-      <p>
-        Des méthodes concrètes pour créer du contenu,
-        travailler sur des documents et coder.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="icon">🤖</div>
-      <h3>Automatiser</h3>
-      <p>
-        Découvre les agents, les workflows et l’automatisation
-        d’actions répétitives.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="icon">🚀</div>
-      <h3>Construire</h3>
-      <p>
-        Termine avec un projet concret qui rassemble
-        les compétences apprises.
-      </p>
-    </div>
 
   </div>
+
+
+  <div class="profile-grid">
+
+
+    <!-- LUCAS -->
+
+    <div class="card">
+
+      <div class="profile-top">
+
+        <div class="avatar">
+          L
+        </div>
+
+        <div>
+
+          <h3>
+            Lucas
+          </h3>
+
+          <span class="age">
+            16 ans · Étudiant
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <span class="example">
+        Exemple de parcours
+      </span>
+
+
+      <p>
+
+        Apprendre à utiliser l'IA pour créer
+        ses premiers projets, automatiser certaines
+        tâches et développer ses compétences numériques.
+
+      </p>
+
+
+      <div class="goal">
+
+        🎯 Créer ses premiers projets avec l'IA
+
+      </div>
+
+    </div>
+
+
+
+    <!-- MARC ADULTE -->
+
+    <div class="card">
+
+      <div class="profile-top">
+
+        <div class="avatar adult">
+          M
+        </div>
+
+        <div>
+
+          <h3>
+            Marc
+          </h3>
+
+          <span class="age">
+            38 ans · Entrepreneur
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <span class="example">
+        Exemple de parcours
+      </span>
+
+
+      <p>
+
+        Découvrir comment intégrer l'IA dans
+        son activité, gagner du temps, automatiser
+        certaines tâches et explorer de nouvelles idées.
+
+      </p>
+
+
+      <div class="goal">
+
+        🚀 Utiliser l'IA dans son activité
+
+      </div>
+
+    </div>
+
+
+
+    <!-- EMMA -->
+
+    <div class="card">
+
+      <div class="profile-top">
+
+        <div class="avatar woman">
+          E
+        </div>
+
+        <div>
+
+          <h3>
+            Emma
+          </h3>
+
+          <span class="age">
+            24 ans · Créatrice
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <span class="example">
+        Exemple de parcours
+      </span>
+
+
+      <p>
+
+        Utiliser l'IA pour créer du contenu,
+        développer une idée, apprendre de nouveaux
+        outils et transformer progressivement une idée
+        en projet concret.
+
+      </p>
+
+
+      <div class="goal">
+
+        💡 Transformer une idée en projet
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+  <!-- MOTIVATION -->
+
+  <div class="motivation">
+
+    <h2>
+      Tu n'as pas besoin d'être expert.
+    </h2>
+
+    <p>
+
+      Tu as simplement besoin de commencer.
+      Une compétence après l'autre, tu peux apprendre
+      à utiliser l'IA pour créer, automatiser,
+      résoudre des problèmes et transformer tes idées
+      en projets concrets.
+
+    </p>
+
+    <button
+      class="primary"
+      onclick="openPay()">
+
+      Commencer maintenant — 10 €
+
+    </button>
+
+  </div>
+
 </section>
 
 
+
+<!-- POURQUOI -->
+
 <section class="section">
 
   <div class="section-title">
-    <h2>Ton parcours</h2>
-    <p>Chaque étape ajoute une compétence à la précédente.</p>
+
+    <h2>
+      Pourquoi commencer Mastery AI ?
+    </h2>
+
+    <p>
+
+      Ce n'est pas seulement apprendre des outils.
+      C'est apprendre une méthode que tu peux réutiliser.
+
+    </p>
+
   </div>
+
+
+  <div class="benefits">
+
+
+    <div class="card">
+
+      <div class="icon">
+        ⚡
+      </div>
+
+      <h3>
+        Concret
+      </h3>
+
+      <p>
+        Des explications simples et des applications
+        directement utilisables.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="icon">
+        🎯
+      </div>
+
+      <h3>
+        À ton rythme
+      </h3>
+
+      <p>
+        Avance quand tu veux et retrouve ta progression.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="icon">
+        ★
+      </div>
+
+      <h3>
+        Orienté projets
+      </h3>
+
+      <p>
+        Apprends en construisant et en expérimentant.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="icon">
+        🚀
+      </div>
+
+      <h3>
+        Prépare ton avenir
+      </h3>
+
+      <p>
+        Développe une compétence numérique
+        utile dans de nombreux domaines.
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- PARCOURS -->
+
+<section class="section">
+
+  <div class="section-title">
+
+    <h2>
+      Ton parcours en 3 étapes
+    </h2>
+
+    <p>
+      Une méthode simple pour passer de la découverte
+      à la pratique.
+    </p>
+
+  </div>
+
 
   <div class="journey">
 
-    <div class="card">
-      <span class="number">01 — COMPRENDRE</span>
-      <h3>Les fondamentaux</h3>
+
+    <div class="card step">
+
+      <span class="step-number">
+        01 — COMPRENDRE
+      </span>
+
+      <h3>
+        Les fondamentaux
+      </h3>
+
       <p>
-        IA, prompts, raisonnement, documents et bonnes méthodes de travail.
+        IA, prompts, documents et bonnes méthodes
+        pour apprendre à bien utiliser les outils.
       </p>
+
     </div>
 
-    <div class="card">
-      <span class="number">02 — CRÉER</span>
-      <h3>Passer à l’action</h3>
+
+    <div class="card step">
+
+      <span class="step-number">
+        02 — CRÉER
+      </span>
+
+      <h3>
+        Passer à l'action
+      </h3>
+
       <p>
-        Contenu, images, code, assistants et premiers workflows professionnels.
+        Contenu, images, code, assistants
+        et premiers workflows.
       </p>
+
     </div>
 
-    <div class="card">
-      <span class="number">03 — CONSTRUIRE</span>
-      <h3>Ton projet final</h3>
+
+    <div class="card step">
+
+      <span class="step-number">
+        03 — CONSTRUIRE
+      </span>
+
+      <h3>
+        Ton projet final
+      </h3>
+
       <p>
-        Choisis un problème, imagine une solution et construis ton workflow IA.
+        Pars d'une idée et transforme-la
+        en projet IA concret.
       </p>
+
     </div>
+
 
   </div>
+
 </section>
 
 
-<section class="section" id="programme">
+
+<!-- MODULES -->
+
+<section
+  class="section"
+  id="programme">
 
   <div class="section-title">
-    <h2>Les 24 modules</h2>
+
+    <h2>
+      Les 24 modules
+    </h2>
 
     <p>
-      Avance à ton rythme et garde ta progression enregistrée sur cet appareil.
+      Un parcours complet, structuré et pratique.
     </p>
+
   </div>
+
 
   <div class="progress-box">
 
-    <div class="bar">
-      <i id="bar"></i>
+    <div class="progress-head">
+
+      <span>
+        Ta progression
+      </span>
+
+      <span id="progressText">
+        0 / 24 terminés · 0%
+      </span>
+
     </div>
 
-    <div class="prog" id="prog">
-      0 / 24 terminés
+
+    <div class="progress-bar">
+
+      <div
+        class="progress-fill"
+        id="progressFill">
+      </div>
+
     </div>
 
   </div>
 
-  <div class="modules" id="modules"></div>
+
+  <div
+    class="modules"
+    id="modules">
+  </div>
 
 </section>
 
 
-<section class="prompt">
 
-  <h2>🎁 Aperçu de la bibliothèque de prompts</h2>
+<!-- PROMPTS -->
+
+<section class="prompt-section">
+
+  <div class="prompt-info">
+
+    <h2>
+      🎁 Bibliothèque de prompts
+    </h2>
+
+    <p>
+
+      Apprends à construire des prompts plus précis
+      et plus utiles. Voici un aperçu d'une des
+      méthodes que tu retrouveras dans Mastery AI.
+
+    </p>
+
+  </div>
+
+
+  <div class="prompt-box">
+
+    <code id="prompt1">Agis comme un expert. Identifie mon objectif, les informations manquantes, les contraintes et le format idéal. Puis propose une solution structurée et indique ce qui doit être vérifié.</code>
+
+
+    <button
+      class="copy"
+      onclick="copyPrompt()">
+
+      Copier le prompt
+
+    </button>
+
+  </div>
+
+</section>
+
+
+
+<!-- FINAL -->
+
+<section class="final">
+
+  <h2>
+    Tu n'as pas besoin d'attendre.
+  </h2>
+
 
   <p>
-    Une partie de ce que tu retrouveras dans Mastery AI :
-    des structures que tu peux adapter à tes propres besoins.
+
+    Chaque compétence commence par une première étape.
+    Apprends progressivement, teste ce que tu apprends
+    et construis tes propres projets avec l'IA.
+
   </p>
 
-  <code id="p1">Agis comme un expert. Identifie mon objectif, les informations manquantes, les contraintes et le format idéal. Puis propose une solution structurée et indique ce qui doit être vérifié.</code>
 
-  <button class="copy" onclick="copy('p1')">
-    Copier le prompt
-  </button>
+  <button
+    class="primary"
+    onclick="openPay()">
 
-  <code id="p2">Analyse cette idée selon le problème, le client cible, la concurrence, les coûts, la distribution, les risques et le test minimal.</code>
+    Commencer la formation — 10 € →
 
-  <button class="copy" onclick="copy('p2')">
-    Copier le prompt
   </button>
 
 </section>
 
-
-<section class="final-cta">
-
-  <h2>Tu n’as pas besoin d’attendre.</h2>
-
-  <p>
-    Commence par une première étape, apprends une méthode,
-    teste-la et construis progressivement.
-    Mastery AI est conçu pour passer de la découverte à la pratique.
-  </p>
-
-  <button onclick="openPay()">
-    Commencer la formation — 10 €
-  </button>
-
-</section>
 
 </main>
 
 
-<footer>
-  Mastery AI · Formation éducative · Les résultats financiers ne sont pas garantis.
+
+<footer id="faq">
+
+  Mastery AI · Formation éducative ·
+  Les résultats financiers ne sont pas garantis.
+
 </footer>
 
 
-<div class="modal" id="modal" aria-hidden="true">
 
-  <div class="box">
+<!-- MODALE PAIEMENT -->
+
+<div
+  class="modal"
+  id="paymentModal">
+
+  <div class="modal-box">
 
     <button
       class="close"
-      onclick="closePay()"
-      aria-label="Fermer">
+      onclick="closePay()">
+
       ×
+
     </button>
 
-    <h2>Commencer Mastery AI</h2>
+
+    <h2>
+      Commencer Mastery AI
+    </h2>
+
 
     <p>
-      24 modules, exercices et bibliothèque de prompts
-      pour apprendre à utiliser l’IA de façon concrète.
+
+      Accède à la formation complète et commence
+      ton parcours à travers les 24 modules.
+
     </p>
 
-    <div
-      class="price"
-      style="font-size:34px;margin:16px 0">
+
+    <div class="payment-price">
       10 €
-      <small>paiement unique</small>
     </div>
+
 
     <div
-      id="paymentError"
-      class="payment-error">
+      class="payment-error"
+      id="paymentError">
 
-      Le lien de paiement n’est pas encore configuré.
-      Le bouton ne doit pas ouvrir une deuxième fois le site.
+      Le lien de paiement n'est pas encore configuré.
+      Le bouton est volontairement bloqué pour éviter
+      qu'il ouvre à nouveau le site.
 
     </div>
+
 
     <a
-      id="pay"
-      class="buy"
-      style="width:100%;text-align:center"
+      id="paymentButton"
+      class="payment-button"
       href="#">
 
       Payer 10 €
 
     </a>
 
-    <p class="payment-note">
-      Le lien de paiement doit être celui de ton prestataire
-      de paiement. Il doit ouvrir la page de paiement,
-      pas l’adresse de Mastery AI.
+
+    <p style="font-size:10px;color:#6f798d">
+
+      Le paiement sera connecté lorsque tu auras
+      ton véritable lien de paiement marchand.
+
     </p>
 
   </div>
+
 </div>
+
 
 
 <script>
 
+
+/* =====================================================
+   PAIEMENT
+   =====================================================
+
+   Quand tu auras ton vrai lien de paiement,
+   remplace simplement :
+
+   const PAYMENT_URL = "";
+
+   par :
+
+   const PAYMENT_URL = "TON_LIEN_DE_PAIEMENT";
+
+   ===================================================== */
+
+
 const PAYMENT_URL = "";
-/*
-  IMPORTANT :
-  Quand tu auras ton vrai lien de paiement,
-  remplace les guillemets par ton lien.
-
-  Exemple :
-
-  const PAYMENT_URL = "https://ton-vrai-lien-de-paiement.com";
-
-  NE METS PAS TON LIEN WERO PERSONNEL ICI
-  tant qu'on n'a pas configuré le vrai système marchand.
-*/
 
 
-const titles = [
 
-  'Comprendre l’intelligence artificielle',
+/* =====================================================
+   MODULES
+   ===================================================== */
 
-  'Savoir parler à une IA',
 
-  'La méthode du prompt professionnel',
+const modules = [
 
-  'Faire travailler l’IA en plusieurs étapes',
+  "Comprendre l’intelligence artificielle",
 
-  'ChatGPT comme assistant personnel',
+  "Savoir parler à une IA",
 
-  'Travailler avec des documents',
+  "La méthode du prompt professionnel",
 
-  'L’IA pour la création de contenu',
+  "Faire travailler l’IA en plusieurs étapes",
 
-  'Créer des images avec l’IA',
+  "ChatGPT comme assistant personnel",
 
-  'L’IA pour le code',
+  "Travailler avec des documents",
 
-  'Claude et les agents de travail',
+  "L’IA pour la création de contenu",
 
-  'Automatiser une entreprise',
+  "Créer des images avec l’IA",
 
-  'Gagner de l’argent avec l’IA',
+  "L’IA pour le code",
 
-  'Le service « IA pour entreprise »',
+  "Claude et les agents de travail",
 
-  'Créer une agence IA',
+  "Automatiser une entreprise",
 
-  'Vendre des produits numériques',
+  "Gagner de l’argent avec l’IA",
 
-  'Créer une formation en ligne',
+  "Le service « IA pour entreprise »",
 
-  'Vendre une formation',
+  "Créer une agence IA",
 
-  'Créer une offre',
+  "Vendre des produits numériques",
 
-  'Recherche d’idées business',
+  "Créer une formation en ligne",
 
-  'L’IA et la productivité',
+  "Vendre une formation",
 
-  'Les erreurs à éviter',
+  "Créer une offre",
 
-  'Le workflow professionnel IA',
+  "Recherche d’idées business",
 
-  'Le projet final',
+  "L’IA et la productivité",
 
-  'La compétence la plus importante'
+  "Les erreurs à éviter",
+
+  "Le workflow professionnel IA",
+
+  "Le projet final",
+
+  "La compétence la plus importante"
 
 ];
 
 
-let done = JSON.parse(
-  localStorage.getItem('masteryAI') || '[]'
-);
+
+let completed =
+  JSON.parse(
+    localStorage.getItem("masteryAIProgress") || "[]"
+  );
 
 
-function render(){
 
-  const x = document.getElementById('modules');
+function renderModules(){
 
-  x.innerHTML = '';
+  const container =
+    document.getElementById("modules");
 
-  titles.forEach((t,i)=>{
+  container.innerHTML = "";
 
-    const d = document.createElement('div');
 
-    d.className = 'card';
+  modules.forEach((name,index)=>{
 
-    const ok = done.includes(i);
+    const card =
+      document.createElement("div");
 
-    d.innerHTML = `
-      <span class="module-number">
-        MODULE ${String(i+1).padStart(2,'0')}
-      </span>
+    card.className = "module";
 
-      <h3>${t}</h3>
+
+    const isDone =
+      completed.includes(index);
+
+
+    card.innerHTML = `
+
+      <div class="module-number">
+
+        MODULE ${String(index+1).padStart(2,"0")}
+
+      </div>
+
+
+      <h3>
+        ${name}
+      </h3>
+
 
       <p>
-        Leçon, application pratique et exercice.
+        Leçon, méthode pratique et exercice.
       </p>
 
-      <button class="${ok ? 'done' : 'module-btn'}">
-        ${ok ? '✓ Terminé' : 'Marquer comme terminé'}
+
+      <button
+        class="${isDone ? "done" : ""}"
+        onclick="toggleModule(${index})">
+
+        ${isDone
+          ? "✓ Terminé"
+          : "Marquer comme terminé"}
+
       </button>
+
     `;
 
-    d.querySelector('button').onclick = ()=>{
 
-      if(ok){
-
-        done = done.filter(n=>n!==i);
-
-      }else{
-
-        done.push(i);
-
-      }
-
-      localStorage.setItem(
-        'masteryAI',
-        JSON.stringify(done)
-      );
-
-      render();
-
-    };
-
-    x.appendChild(d);
+    container.appendChild(card);
 
   });
 
 
-  const p = Math.round(
-    done.length / 24 * 100
-  );
-
-  document.getElementById('bar').style.width =
-    p + '%';
-
-  document.getElementById('prog').textContent =
-    done.length +
-    ' / 24 terminés · ' +
-    p +
-    '%';
+  updateProgress();
 
 }
+
+
+
+function toggleModule(index){
+
+  if(completed.includes(index)){
+
+    completed =
+      completed.filter(
+        item => item !== index
+      );
+
+  }else{
+
+    completed.push(index);
+
+  }
+
+
+  localStorage.setItem(
+    "masteryAIProgress",
+    JSON.stringify(completed)
+  );
+
+
+  renderModules();
+
+}
+
+
+
+function updateProgress(){
+
+  const percentage =
+    Math.round(
+      completed.length / modules.length * 100
+    );
+
+
+  document.getElementById(
+    "progressFill"
+  ).style.width =
+    percentage + "%";
+
+
+  document.getElementById(
+    "progressText"
+  ).textContent =
+
+    completed.length +
+    " / " +
+    modules.length +
+    " terminés · " +
+    percentage +
+    "%";
+
+}
+
+
+
+/* =====================================================
+   PAIEMENT
+   ===================================================== */
 
 
 function openPay(){
 
   document
-    .getElementById('modal')
-    .classList.add('show');
+    .getElementById("paymentModal")
+    .classList.add("show");
 
-  document
-    .getElementById('modal')
-    .setAttribute('aria-hidden','false');
 
   configurePayment();
 
 }
 
 
+
 function closePay(){
 
   document
-    .getElementById('modal')
-    .classList.remove('show');
-
-  document
-    .getElementById('modal')
-    .setAttribute('aria-hidden','true');
+    .getElementById("paymentModal")
+    .classList.remove("show");
 
 }
 
 
+
 function configurePayment(){
 
-  const a =
-    document.getElementById('pay');
+  const button =
+    document.getElementById(
+      "paymentButton"
+    );
 
-  const e =
-    document.getElementById('paymentError');
+
+  const error =
+    document.getElementById(
+      "paymentError"
+    );
 
 
   if(
     PAYMENT_URL &&
-    PAYMENT_URL !== '#'
+    PAYMENT_URL !== "#"
   ){
 
-    a.href = PAYMENT_URL;
+    button.href =
+      PAYMENT_URL;
 
-    a.target = '_blank';
+    button.target =
+      "_blank";
 
-    a.rel = 'noopener';
+    button.rel =
+      "noopener noreferrer";
 
-    a.onclick = null;
 
-    e.classList.remove('show');
+    button.onclick = null;
+
+    error.classList.remove(
+      "show"
+    );
 
   }else{
 
-    a.href = '#';
+    button.href =
+      "#";
 
-    a.removeAttribute('target');
+    button.removeAttribute(
+      "target"
+    );
 
-    e.classList.add('show');
 
-    a.onclick = (ev)=>{
+    error.classList.add(
+      "show"
+    );
 
-      ev.preventDefault();
 
-      return false;
+    button.onclick =
+      function(event){
 
-    };
+        event.preventDefault();
+
+      };
 
   }
 
 }
 
 
-function copy(id){
 
-  navigator.clipboard.writeText(
-    document.getElementById(id).innerText
-  );
+/* =====================================================
+   COPIER PROMPT
+   ===================================================== */
 
-  alert('Prompt copié !');
+
+function copyPrompt(){
+
+  const text =
+    document.getElementById(
+      "prompt1"
+    ).innerText;
+
+
+  navigator.clipboard
+    .writeText(text)
+    .then(()=>{
+
+      alert(
+        "Prompt copié !"
+      );
+
+    });
 
 }
 
 
-render();
+
+/* =====================================================
+   FERMER MODALE EN CLIQUANT À L'EXTÉRIEUR
+   ===================================================== */
+
+
+document
+  .getElementById("paymentModal")
+  .addEventListener(
+    "click",
+    function(event){
+
+      if(
+        event.target === this
+      ){
+
+        closePay();
+
+      }
+
+    }
+  );
+
+
+
+/* INITIALISATION */
+
+renderModules();
 
 configurePayment();
+
 
 </script>
 
