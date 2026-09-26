@@ -1,0 +1,826 @@
+[
+  {
+    "title": "Comprendre l’intelligence artificielle",
+    "desc": "Comprendre les modèles, l’IA générative, les limites, la vérification et les niveaux d’usage.",
+    "sections": [
+      {
+        "title": "1.1 — IA, modèle, application et agent",
+        "text": "L’intelligence artificielle est un terme large. Un modèle est le moteur qui transforme des entrées en sorties ; une application ajoute une interface, des outils, des fichiers et des règles ; un agent va plus loin en enchaînant des actions avec des outils autorisés. Cette distinction évite de confondre l’outil avec la méthode. Quand tu changes d’application, les principes de formulation d’un problème, de contexte, de contraintes et de vérification restent utiles."
+      },
+      {
+        "title": "1.2 — Ce que fait réellement une IA générative",
+        "text": "Une IA générative produit une sortie à partir d’un contexte et d’instructions. Elle peut rédiger, transformer, résumer, classer, proposer du code ou générer des images. Une réponse fluide n’est toutefois pas une preuve de vérité. Pour les faits importants, les chiffres, les références ou les décisions à conséquences, il faut vérifier la source ou le résultat."
+      },
+      {
+        "title": "1.3 — Les quatre niveaux d’utilisation",
+        "text": "On peut progresser de la réponse ponctuelle vers le livrable, puis le workflow et enfin l’automatisation. Une réponse répond à une question. Un livrable produit quelque chose d’utilisable. Un workflow organise plusieurs étapes. Une automatisation déclenche et exécute ces étapes avec peu d’intervention. Plus on monte en niveau, plus les contrôles doivent être explicites."
+      },
+      {
+        "title": "1.4 — La règle fondamentale",
+        "text": "L’IA accélère surtout une méthode déjà définie. Si le problème est mal défini, une automatisation très rapide peut simplement produire davantage de mauvais résultats. Avant de choisir un outil, formule donc le problème, le résultat attendu, les contraintes et le contrôle nécessaire."
+      }
+    ],
+    "exercise": "Exercice : choisis une tâche réelle. Écris ce que l’IA pourrait faire, ce qui doit rester humain et comment tu vérifierais le résultat.",
+    "quiz": [
+      "Une réponse bien écrite est-elle forcément vraie ?",
+      "Quelle différence entre modèle et application ?",
+      "Pourquoi le contrôle humain devient-il important dans une automatisation ?"
+    ],
+    "answers": [
+      "Non. La qualité rédactionnelle ne garantit pas l’exactitude.",
+      "Le modèle est le moteur ; l’application fournit l’interface, les outils et le contexte de travail.",
+      "Parce qu’une erreur peut être répétée ou amplifiée automatiquement."
+    ]
+  },
+  {
+    "title": "Savoir parler à une IA",
+    "desc": "Passer des demandes vagues à des instructions précises, contextualisées et directement exploitables.",
+    "sections": [
+      {
+        "title": "2.1 — Le problème de l’ambiguïté",
+        "text": "Quand tu écris « fais-moi une présentation », plusieurs résultats sont possibles : présentation scolaire, pitch commercial, script oral ou plan de diapositives. L’IA doit choisir à ta place. Un bon prompt réduit cette zone d’incertitude en indiquant le résultat attendu et le contexte."
+      },
+      {
+        "title": "2.2 — Définir l’objectif",
+        "text": "Un objectif utile décrit un résultat observable. « Améliore mon business » est trop large. « Propose trois façons de réduire le temps consacré au traitement des demandes clients » est beaucoup plus précis. Tu peux ajouter un nombre, une échéance, un public ou un critère de réussite."
+      },
+      {
+        "title": "2.3 — Donner le contexte",
+        "text": "Le contexte contient les informations qui changent la réponse : public, niveau, produit, situation, ressources, deadline, budget ou contenu existant. Ne donne pas tout ce que tu sais : donne ce qui est nécessaire pour prendre la bonne direction."
+      },
+      {
+        "title": "2.4 — Contraintes et format",
+        "text": "Une contrainte peut porter sur la longueur, le ton, la langue, le budget, le nombre d’options ou les informations interdites. Le format peut être un tableau, une checklist, un plan, des étapes ou une structure précise. Ces deux éléments diminuent fortement le travail de réécriture."
+      }
+    ],
+    "exercise": "Exercice : transforme « fais-moi une présentation sur l’IA » en prompt comprenant objectif, contexte, contraintes et format.",
+    "quiz": [
+      "Pourquoi un prompt vague donne-t-il souvent un résultat générique ?",
+      "Quelle information aide l’IA à adapter son niveau ?",
+      "Pourquoi demander un format précis ?"
+    ],
+    "answers": [
+      "Parce que l’IA doit combler les informations manquantes par des hypothèses.",
+      "Le contexte, notamment le public et son niveau.",
+      "Pour obtenir directement une sortie exploitable et éviter une grande partie de la mise en forme manuelle."
+    ]
+  },
+  {
+    "title": "La méthode du prompt professionnel",
+    "desc": "Maîtriser R-O-C-C-F : Rôle, Objectif, Contexte, Contraintes, Format, puis apprendre à itérer.",
+    "sections": [
+      {
+        "title": "3.1 — R : Rôle",
+        "text": "Le rôle donne une perspective de travail. « Agis comme un UX designer spécialisé en e-commerce » indique le type d’analyse attendu. Le rôle doit être pertinent et ne remplace pas les informations factuelles. Évite les formulations qui demandent à l’IA de prétendre à une autorité qu’elle n’a pas."
+      },
+      {
+        "title": "3.2 — O : Objectif",
+        "text": "Décris exactement le résultat que tu veux obtenir. Un bon objectif peut être mesuré ou contrôlé : produire cinq idées, comparer trois solutions, écrire une structure en huit sections ou identifier les informations manquantes."
+      },
+      {
+        "title": "3.3 — C : Contexte",
+        "text": "Le contexte explique la situation dans laquelle l’IA travaille. Il peut contenir le produit, le client cible, les ressources, le niveau de l’utilisateur et les décisions déjà prises. Un contexte pertinent évite à l’IA de repartir de zéro."
+      },
+      {
+        "title": "3.4 — C : Contraintes",
+        "text": "Les contraintes sont les règles de production : longueur maximale, budget, ton, langue, nombre de propositions, sources autorisées, éléments à ne pas inventer ou étapes qui nécessitent une validation humaine."
+      },
+      {
+        "title": "3.5 — F : Format",
+        "text": "Le format décrit la forme finale : tableau, checklist, plan, JSON, script ou étapes. Pour un workflow technique, un format structuré peut aussi permettre de transmettre le résultat à une autre étape."
+      },
+      {
+        "title": "3.6 — Itérer plutôt que chercher le prompt parfait",
+        "text": "Un prompt professionnel n’est pas nécessairement parfait du premier coup. Une méthode efficace est : première production, critique, identification des hypothèses, correction, puis nouvelle version. Tu peux demander à l’IA d’indiquer ce qui manque avant de produire la version finale."
+      }
+    ],
+    "exercise": "Exercice : écris un prompt R-O-C-C-F pour créer une stratégie de contenu sur sept jours, puis demande à l’IA de critiquer son propre résultat selon cinq critères.",
+    "quiz": [
+      "Que signifie R-O-C-C-F ?",
+      "Pourquoi les contraintes sont-elles utiles ?",
+      "Pourquoi utiliser plusieurs itérations ?"
+    ],
+    "answers": [
+      "Rôle, Objectif, Contexte, Contraintes, Format.",
+      "Elles empêchent l’IA de produire une réponse incompatible avec les limites du projet.",
+      "Parce qu’une première réponse permet d’identifier les lacunes et d’améliorer progressivement le résultat."
+    ]
+  },
+  {
+    "title": "Faire travailler l’IA en plusieurs étapes",
+    "desc": "Décomposer les tâches complexes en chaînes de travail contrôlables.",
+    "sections": [
+      {
+        "title": "4.1 — Pourquoi les gros prompts échouent",
+        "text": "Une demande qui mélange recherche, analyse, stratégie, rédaction et vérification est difficile à contrôler. Si le résultat est mauvais, tu ne sais pas quelle étape a posé problème. La décomposition permet de tester chaque partie."
+      },
+      {
+        "title": "4.2 — Construire un workflow",
+        "text": "Une structure générale peut être : comprendre le besoin, collecter les informations, analyser, produire, contrôler, finaliser. Chaque étape reçoit une entrée claire et doit produire une sortie définie."
+      },
+      {
+        "title": "4.3 — Ajouter des points de contrôle",
+        "text": "Après une étape importante, demande une vérification : informations manquantes, hypothèses, incohérences, contradictions ou critères non respectés. Une étape de contrôle est particulièrement importante avant une action irréversible."
+      },
+      {
+        "title": "4.4 — Conserver les décisions",
+        "text": "Un workflow devient plus stable lorsque les choix importants sont explicitement conservés : public cible, objectif, ton, contraintes, sources et critères de qualité. Les étapes suivantes peuvent alors respecter le même cadre."
+      }
+    ],
+    "exercise": "Exercice : construis un workflow de six étapes pour créer une page de vente et ajoute un contrôle avant la publication.",
+    "quiz": [
+      "Pourquoi décomposer une tâche ?",
+      "À quoi sert un point de contrôle ?",
+      "Quelles informations faut-il conserver entre les étapes ?"
+    ],
+    "answers": [
+      "Pour améliorer le contrôle, la précision et le diagnostic des erreurs.",
+      "À détecter les problèmes avant de passer à l’étape suivante.",
+      "Les objectifs, contraintes, décisions et critères de qualité importants."
+    ]
+  },
+  {
+    "title": "ChatGPT comme assistant personnel",
+    "desc": "Transformer une IA conversationnelle en système d’apprentissage, d’organisation, de préparation et de réflexion.",
+    "sections": [
+      {
+        "title": "5.1 — Brainstorming contrôlé",
+        "text": "Demande d’abord plusieurs options, puis impose des critères pour les comparer. L’IA est alors utile pour élargir l’espace des possibilités sans lui déléguer automatiquement la décision finale."
+      },
+      {
+        "title": "5.2 — Organisation",
+        "text": "Une liste désordonnée peut devenir une checklist, un plan de travail ou un calendrier. Pour obtenir quelque chose d’utile, précise les échéances, priorités, dépendances et contraintes réelles."
+      },
+      {
+        "title": "5.3 — Apprendre avec l’IA",
+        "text": "Un bon cycle d’apprentissage est : explication, exemple, questions, correction, explication des erreurs, nouveau test. Cette approche transforme l’IA en tuteur interactif plutôt qu’en simple générateur de réponses."
+      },
+      {
+        "title": "5.4 — Préparer un travail",
+        "text": "Tu peux simuler des questions d’entretien, préparer une présentation, anticiper des objections ou créer une liste de points à vérifier. Les faits importants doivent toutefois être contrôlés avec les sources appropriées."
+      }
+    ],
+    "exercise": "Exercice : crée cinq commandes réutilisables pour ton propre assistant IA : apprendre, organiser, réfléchir, vérifier et préparer.",
+    "quiz": [
+      "Comment transformer l’IA en tuteur ?",
+      "Comment comparer des options sans déléguer la décision ?",
+      "Pourquoi vérifier les faits ?"
+    ],
+    "answers": [
+      "En alternant explication, pratique, questions et correction.",
+      "En définissant des critères puis en demandant une comparaison structurée.",
+      "Parce qu’une réponse plausible peut contenir une erreur."
+    ]
+  },
+  {
+    "title": "Travailler avec des documents",
+    "desc": "Résumer, extraire, comparer et contrôler des documents avec une méthode fiable.",
+    "sections": [
+      {
+        "title": "6.1 — Résumer selon un objectif",
+        "text": "Un résumé dépend du besoin. Une fiche de révision ne ressemble pas à une synthèse destinée à un dirigeant. Indique le public, la longueur et les éléments à préserver."
+      },
+      {
+        "title": "6.2 — Extraction structurée",
+        "text": "Au lieu de demander « résume », demande d’extraire des dates, obligations, montants, décisions, personnes, risques ou informations manquantes. Un format en tableau facilite ensuite l’exploitation."
+      },
+      {
+        "title": "6.3 — Comparer deux documents",
+        "text": "Définis d’abord les critères : prix, durée, obligations, conditions, garanties ou périmètre. L’IA peut ensuite aligner les informations et signaler les différences. Elle ne doit pas inventer un élément absent."
+      },
+      {
+        "title": "6.4 — Vérification dans la source",
+        "text": "Pour une information importante, retrouve le passage original. La synthèse est une aide à la lecture, pas un remplacement automatique du document source."
+      }
+    ],
+    "exercise": "Exercice : imagine deux offres commerciales et crée un prompt qui extrait les critères puis présente uniquement les différences.",
+    "quiz": [
+      "Pourquoi définir les critères avant une comparaison ?",
+      "Quand faut-il vérifier le document original ?",
+      "Que faire lorsqu’une information manque ?"
+    ],
+    "answers": [
+      "Pour que la comparaison soit cohérente et ne se limite pas aux éléments que l’IA choisit spontanément.",
+      "Pour les informations importantes, sensibles ou susceptibles d’influencer une décision.",
+      "La signaler comme manquante au lieu de l’inventer."
+    ]
+  },
+  {
+    "title": "L’IA pour la création de contenu",
+    "desc": "Construire un système éditorial : audience, idées, production, réutilisation et contrôle.",
+    "sections": [
+      {
+        "title": "7.1 — Partir de l’audience",
+        "text": "Un contenu efficace répond à un besoin d’un public défini. Précise son niveau, ses problèmes, son objectif et le contexte dans lequel il consomme le contenu."
+      },
+      {
+        "title": "7.2 — Générer des angles",
+        "text": "L’IA peut proposer des angles pédagogiques, comparatifs, démonstratifs, narratifs ou orientés erreurs fréquentes. Demande plusieurs catégories afin d’éviter vingt variantes de la même idée."
+      },
+      {
+        "title": "7.3 — Produire avec une direction humaine",
+        "text": "Utilise l’IA pour les plans, variantes et premières versions, puis ajoute ton expérience, tes exemples, ton opinion lorsque c’est pertinent. La production automatique ne doit pas supprimer la cohérence éditoriale."
+      },
+      {
+        "title": "7.4 — Réutiliser un contenu",
+        "text": "Un tutoriel long peut être transformé en article, checklist, FAQ, posts et idées de vidéos courtes. Cette logique réduit le coût de production tout en conservant une idée centrale."
+      },
+      {
+        "title": "7.5 — Contrôler",
+        "text": "Avant publication, vérifie les faits, les sources, le ton, les répétitions, les promesses et la cohérence avec l’audience."
+      }
+    ],
+    "exercise": "Exercice : crée un calendrier de sept contenus autour d’un même sujet avec un objectif différent pour chaque contenu.",
+    "quiz": [
+      "Pourquoi définir l’audience avant de produire ?",
+      "Qu’est-ce que le repurposing ?",
+      "Quels éléments vérifier avant publication ?"
+    ],
+    "answers": [
+      "Parce que le niveau, le vocabulaire et l’angle dépendent du public.",
+      "La transformation d’un contenu en plusieurs formats adaptés à différents usages.",
+      "Les faits, sources, ton, répétitions, promesses et cohérence."
+    ]
+  },
+  {
+    "title": "Créer des images avec l’IA",
+    "desc": "Écrire des prompts visuels précis et améliorer une image par itérations contrôlées.",
+    "sections": [
+      {
+        "title": "8.1 — Décrire le sujet",
+        "text": "Commence par le sujet principal : objet, personne fictive, environnement ou scène. Précise ce qui doit attirer l’attention."
+      },
+      {
+        "title": "8.2 — Composition",
+        "text": "Décris le cadrage, l’angle, la position du sujet, la profondeur, l’espace négatif et éventuellement la place réservée au texte. La composition doit dépendre du support final."
+      },
+      {
+        "title": "8.3 — Lumière et ambiance",
+        "text": "La lumière influence fortement le rendu : lumière naturelle, studio, contre-jour, diffuse ou dramatique. Décris aussi l’ambiance : calme, énergique, premium, documentaire, etc."
+      },
+      {
+        "title": "8.4 — Style et itération",
+        "text": "Définis un style cohérent puis change un paramètre à la fois. Si tu modifies simultanément le sujet, le cadrage et la lumière, tu ne sais pas ce qui a amélioré ou détérioré le résultat."
+      }
+    ],
+    "exercise": "Exercice : crée trois prompts pour un même produit : une publicité, une publication verticale et une image de page web.",
+    "quiz": [
+      "Quels éléments contrôlent la composition ?",
+      "Pourquoi changer un paramètre à la fois ?",
+      "Pourquoi le support final influence-t-il le prompt ?"
+    ],
+    "answers": [
+      "Le cadrage, l’angle, la position, la profondeur et l’espace disponible.",
+      "Pour comprendre précisément l’effet de chaque modification.",
+      "Parce qu’une image destinée à une bannière n’a pas les mêmes proportions et besoins qu’une publication verticale."
+    ]
+  },
+  {
+    "title": "L’IA pour le code",
+    "desc": "Utiliser l’IA comme copilote de développement : architecture, génération, débogage, tests et sécurité.",
+    "sections": [
+      {
+        "title": "9.1 — Décrire avant de coder",
+        "text": "Avant de demander du code, définis utilisateurs, fonctionnalités, écrans, données, contraintes et résultat attendu. L’architecture vient avant la production massive de fichiers."
+      },
+      {
+        "title": "9.2 — Générer par petites parties",
+        "text": "Demande une fonctionnalité à la fois, teste-la puis continue. Cela facilite le diagnostic et évite de créer un gros bloc de code impossible à comprendre."
+      },
+      {
+        "title": "9.3 — Déboguer",
+        "text": "Un bon prompt de débogage contient le code concerné, le message d’erreur, ce qui était attendu, ce qui se produit réellement et les changements récents."
+      },
+      {
+        "title": "9.4 — Tester et sécuriser",
+        "text": "Le code généré doit être testé et compris. Les parties qui concernent comptes, paiements, secrets ou données sensibles demandent une attention particulière. Une clé secrète ne doit jamais être exposée dans le front-end."
+      }
+    ],
+    "exercise": "Exercice : décris une mini-application puis demande d’abord son architecture, sans demander le code complet.",
+    "quiz": [
+      "Pourquoi concevoir l’architecture avant le code ?",
+      "Quelles informations fournir pour un bug ?",
+      "Pourquoi ne pas copier aveuglément du code généré ?"
+    ],
+    "answers": [
+      "Pour éviter une structure incohérente et faciliter les évolutions.",
+      "Le code concerné, l’erreur, le comportement attendu, le comportement observé et le contexte récent.",
+      "Parce qu’il peut être incorrect, vulnérable ou incompatible avec le projet."
+    ]
+  },
+  {
+    "title": "Claude et les agents de travail",
+    "desc": "Comprendre les assistants avancés, les agents, leurs outils, leurs permissions et leurs validations.",
+    "sections": [
+      {
+        "title": "10.1 — Assistant contre agent",
+        "text": "Un assistant répond principalement à des instructions. Un agent reçoit un objectif, peut planifier plusieurs étapes et utiliser des outils autorisés. La frontière dépend des capacités du système, mais l’idée centrale est l’exécution multi-étapes."
+      },
+      {
+        "title": "10.2 — Le périmètre d’un agent",
+        "text": "Un agent doit avoir un objectif, des outils autorisés, des limites et une définition de ce qu’il doit faire lorsqu’il rencontre une incertitude. Donner plus de permissions augmente aussi les conséquences d’une erreur."
+      },
+      {
+        "title": "10.3 — Validation humaine",
+        "text": "Les actions sensibles, irréversibles ou externes doivent pouvoir demander une validation. Un agent peut préparer une réponse ; l’envoi peut rester soumis à approbation."
+      },
+      {
+        "title": "10.4 — Journaliser",
+        "text": "Pour comprendre un agent, conserve les étapes importantes, résultats, erreurs et décisions. Cela permet de diagnostiquer et d’améliorer le système."
+      }
+    ],
+    "exercise": "Exercice : conçois un agent de veille hebdomadaire avec objectif, outils, interdictions et points de validation.",
+    "quiz": [
+      "Qu’est-ce qui distingue principalement un agent ?",
+      "Pourquoi limiter les permissions ?",
+      "Quand utiliser une validation humaine ?"
+    ],
+    "answers": [
+      "Sa capacité à planifier et enchaîner des actions avec des outils autorisés.",
+      "Pour réduire les conséquences d’une erreur ou d’une action non prévue.",
+      "Avant une action sensible, externe ou difficilement réversible."
+    ]
+  },
+  {
+    "title": "Automatiser une entreprise",
+    "desc": "Transformer une tâche répétitive en workflow automatisé avec déclencheur, traitement, conditions et contrôle.",
+    "sections": [
+      {
+        "title": "11.1 — Choisir le bon problème",
+        "text": "Une bonne candidate à l’automatisation est fréquente, relativement bien définie et mesurable. Une tâche rare et très ambiguë peut coûter plus cher à automatiser qu’à traiter manuellement."
+      },
+      {
+        "title": "11.2 — Le déclencheur",
+        "text": "Un workflow commence par un événement : formulaire, e-mail, commande, horaire, fichier ou modification d’une donnée."
+      },
+      {
+        "title": "11.3 — Le traitement",
+        "text": "Le système peut extraire, classer, résumer, enrichir, transformer puis envoyer l’information vers une autre application."
+      },
+      {
+        "title": "11.4 — Conditions et exceptions",
+        "text": "Une condition permet de choisir le chemin : si le score est élevé, traiter automatiquement ; sinon envoyer à un humain. Les exceptions doivent être prévues dès la conception."
+      },
+      {
+        "title": "11.5 — Historique",
+        "text": "Les logs et identifiants permettent de retrouver ce qui s’est passé lorsqu’un workflow échoue. Une automatisation sans visibilité devient difficile à maintenir."
+      }
+    ],
+    "exercise": "Exercice : dessine un workflow de formulaire client avec déclencheur, trois actions, une condition et une validation.",
+    "quiz": [
+      "Qu’est-ce qu’un déclencheur ?",
+      "À quoi sert une condition ?",
+      "Pourquoi conserver un historique ?"
+    ],
+    "answers": [
+      "L’événement qui démarre le workflow.",
+      "À choisir une action ou un chemin selon les données.",
+      "À diagnostiquer les erreurs et comprendre les traitements effectués."
+    ]
+  },
+  {
+    "title": "Gagner de l’argent avec l’IA",
+    "desc": "Comprendre les modèles économiques possibles sans confondre outil, compétence, valeur et promesse de résultat.",
+    "sections": [
+      {
+        "title": "12.1 — Vendre un résultat",
+        "text": "Un client n’achète pas nécessairement « de l’IA ». Il paie pour un résultat utile : gagner du temps, structurer un processus, produire un livrable ou résoudre un problème. Le rôle de l’IA est un moyen."
+      },
+      {
+        "title": "12.2 — Les services",
+        "text": "Une compétence peut devenir une prestation : recherche, contenu, analyse, automatisation, documentation ou assistance. Le service est souvent le moyen le plus direct de tester un besoin avant de construire un produit complexe."
+      },
+      {
+        "title": "12.3 — Les produits numériques",
+        "text": "Un guide, template, bibliothèque de ressources ou formation peut être vendu plusieurs fois. La difficulté consiste à résoudre un problème suffisamment précis et à rendre le produit réellement utile."
+      },
+      {
+        "title": "12.4 — Le logiciel",
+        "text": "Un logiciel peut devenir récurrent, mais il implique développement, hébergement, support, sécurité et validation du besoin. Ne construis pas une grande solution avant d’avoir testé l’hypothèse principale."
+      },
+      {
+        "title": "12.5 — Tester avant d’investir",
+        "text": "Commence par une hypothèse, un petit prototype et une manière de mesurer l’intérêt. L’IA peut accélérer le test, mais elle ne remplace pas la validation auprès de vrais utilisateurs."
+      }
+    ],
+    "exercise": "Exercice : choisis un problème et imagine une version service, une version produit numérique et une version logiciel. Compare coût, complexité et test.",
+    "quiz": [
+      "Pour quoi un client paie-t-il réellement ?",
+      "Quels sont trois modèles économiques autour de l’IA ?",
+      "Pourquoi tester avant de construire beaucoup ?"
+    ],
+    "answers": [
+      "Pour une solution ou un résultat utile, pas simplement pour la présence d’IA.",
+      "Services, produits numériques et logiciels, entre autres.",
+      "Pour obtenir rapidement des informations sur la demande et réduire le risque de construire inutilement."
+    ]
+  },
+  {
+    "title": "Le service « IA pour entreprise »",
+    "desc": "Construire une prestation professionnelle à partir d’un problème mesurable.",
+    "sections": [
+      {
+        "title": "13.1 — Diagnostic",
+        "text": "Cherche une tâche lente, répétitive, coûteuse ou sujette aux erreurs. Demande comment elle fonctionne aujourd’hui avant de proposer une technologie."
+      },
+      {
+        "title": "13.2 — Mesurer",
+        "text": "Mesure fréquence, durée, volume et erreurs. Cela permet d’estimer le problème et de définir un objectif de pilote."
+      },
+      {
+        "title": "13.3 — Concevoir le pilote",
+        "text": "Un pilote doit avoir un périmètre limité, un résultat attendu, une durée et des critères de réussite. L’objectif est d’apprendre sans transformer toute l’entreprise d’un coup."
+      },
+      {
+        "title": "13.4 — Livrer et documenter",
+        "text": "Documente le workflow, les outils, les accès, les limites, les exceptions et la procédure lorsqu’une erreur survient. Une solution professionnelle doit pouvoir être comprise par l’équipe."
+      }
+    ],
+    "exercise": "Exercice : rédige une offre pilote sur une page : problème, solution, étapes, livrables, durée et critères de réussite.",
+    "quiz": [
+      "Pourquoi mesurer avant d’automatiser ?",
+      "Pourquoi commencer par un pilote ?",
+      "Que doit contenir la documentation ?"
+    ],
+    "answers": [
+      "Pour estimer la valeur et comparer la situation avant/après.",
+      "Pour limiter le périmètre, apprendre et réduire le risque.",
+      "Le workflow, les outils, les accès, les limites et la gestion des erreurs."
+    ]
+  },
+  {
+    "title": "Créer une agence IA",
+    "desc": "Structurer une activité autour d’une niche, d’une offre répétable et d’un processus de livraison.",
+    "sections": [
+      {
+        "title": "14.1 — Choisir une niche",
+        "text": "Une niche est un type de client ou secteur. Elle permet de comprendre plus vite les problèmes récurrents et de construire une offre adaptée."
+      },
+      {
+        "title": "14.2 — Construire une offre",
+        "text": "Décris problème, résultat, livrables, processus, limites et conditions. Une offre vague est difficile à vendre et encore plus difficile à livrer."
+      },
+      {
+        "title": "14.3 — Acquisition",
+        "text": "Une agence peut utiliser contenu, réseau, démonstrations, partenariats ou prospection. L’objectif initial est d’apprendre quel message obtient des conversations pertinentes."
+      },
+      {
+        "title": "14.4 — Standardiser",
+        "text": "Transforme les tâches répétitives en checklists, templates et procédures. Plus le processus est documenté, plus il est facile de maintenir une qualité constante."
+      },
+      {
+        "title": "14.5 — Mesurer",
+        "text": "Mesure temps de livraison, qualité, erreurs, coût et satisfaction. L’amélioration vient de données concrètes plutôt que d’une impression générale."
+      }
+    ],
+    "exercise": "Exercice : crée une agence fictive avec nom, niche, problème, offre, acquisition et processus de livraison.",
+    "quiz": [
+      "Pourquoi choisir une niche ?",
+      "Qu’est-ce qu’une offre standardisable ?",
+      "Que faut-il mesurer dans une agence ?"
+    ],
+    "answers": [
+      "Pour mieux comprendre les problèmes et adapter l’offre.",
+      "Une offre dont les étapes et livrables peuvent être répétés avec un processus clair.",
+      "Temps, qualité, erreurs, coût et résultats obtenus."
+    ]
+  },
+  {
+    "title": "Vendre des produits numériques",
+    "desc": "Créer une ressource numérique utile à partir d’un problème précis.",
+    "sections": [
+      {
+        "title": "15.1 — Trouver le problème",
+        "text": "Un produit numérique est plus utile lorsqu’il résout une difficulté spécifique et fréquente. « Apprendre l’IA » est large ; « organiser son service client avec cinq workflows prêts à adapter » est plus concret."
+      },
+      {
+        "title": "15.2 — Choisir le format",
+        "text": "Guide, template, checklist, base de ressources, mini-cours ou outil : le format doit correspondre au problème. Le but est de réduire le travail du client."
+      },
+      {
+        "title": "15.3 — Construire une première version",
+        "text": "Commence par une version utilisable. Ne multiplie pas les pages uniquement pour donner l’impression de volume. Chaque élément doit aider l’utilisateur à atteindre le résultat pédagogique ou pratique."
+      },
+      {
+        "title": "15.4 — Distribution et amélioration",
+        "text": "Une page claire explique le problème, le contenu, le prix, les conditions et la façon de commencer. Les retours réels servent ensuite à améliorer le produit."
+      }
+    ],
+    "exercise": "Exercice : définis un produit numérique : problème, public, contenu, format, prix indicatif et méthode de test.",
+    "quiz": [
+      "Pourquoi un problème spécifique est-il important ?",
+      "Comment choisir le format ?",
+      "Que faire après une première version ?"
+    ],
+    "answers": [
+      "Il permet de construire une solution concrète et compréhensible.",
+      "En fonction de la manière dont le produit doit résoudre le problème.",
+      "Le tester, recueillir des retours et améliorer les points faibles."
+    ]
+  },
+  {
+    "title": "Créer une formation en ligne",
+    "desc": "Transformer une compétence en parcours pédagogique progressif, pratique et mesurable.",
+    "sections": [
+      {
+        "title": "16.1 — La promesse pédagogique",
+        "text": "Une formation sérieuse promet une compétence ou une transformation observable, pas un résultat financier garanti. Exemple : « savoir concevoir un workflow IA » est vérifiable ; « devenir riche » ne l’est pas."
+      },
+      {
+        "title": "16.2 — Progression",
+        "text": "Commence par les concepts nécessaires puis augmente progressivement la difficulté. Chaque module doit préparer le suivant."
+      },
+      {
+        "title": "16.3 — Structure d’une leçon",
+        "text": "Une bonne leçon peut suivre : objectif, concept, explication, exemple, démonstration, exercice, correction et quiz. Cette répétition donne un cadre d’apprentissage."
+      },
+      {
+        "title": "16.4 — Projet final",
+        "text": "Le projet final oblige l’apprenant à combiner plusieurs compétences. Il permet de vérifier que les connaissances ont été transformées en capacité pratique."
+      }
+    ],
+    "exercise": "Exercice : crée le plan d’une mini-formation de cinq modules avec objectif et exercice pour chaque module.",
+    "quiz": [
+      "Quelle différence entre promesse pédagogique et promesse financière ?",
+      "Pourquoi les exercices sont-ils importants ?",
+      "À quoi sert un projet final ?"
+    ],
+    "answers": [
+      "La première décrit une compétence observable ; la seconde prétend à un résultat économique qui ne peut pas être garanti.",
+      "Ils obligent à utiliser la connaissance et permettent de vérifier la compréhension.",
+      "À démontrer la capacité à combiner les compétences apprises."
+    ]
+  },
+  {
+    "title": "Vendre une formation",
+    "desc": "Construire une page de vente claire, crédible et orientée vers une décision informée.",
+    "sections": [
+      {
+        "title": "17.1 — Partir du problème",
+        "text": "Explique ce que l’utilisateur cherche à résoudre et pourquoi le sujet est pertinent. Évite les formulations dramatiques ou les promesses irréalistes."
+      },
+      {
+        "title": "17.2 — Présenter la solution",
+        "text": "Explique ce que contient la formation, pour qui elle est conçue et comment elle fonctionne. Le programme doit être suffisamment détaillé pour que l’acheteur sache ce qu’il achète."
+      },
+      {
+        "title": "17.3 — Preuves réelles",
+        "text": "Utilise uniquement des témoignages, statistiques, résultats ou logos que tu peux réellement justifier. Une preuve inventée peut tromper l’acheteur et dégrader la confiance."
+      },
+      {
+        "title": "17.4 — FAQ et appel à l’action",
+        "text": "Réponds aux questions pratiques : niveau, durée, accès, prix, paiement, contenu et conditions. Le bouton doit indiquer clairement l’action réalisée."
+      }
+    ],
+    "exercise": "Exercice : construis une page de vente en huit blocs sans inventer de témoignage ni de chiffre.",
+    "quiz": [
+      "Pourquoi le programme doit-il être détaillé ?",
+      "Qu’est-ce qu’une preuve crédible ?",
+      "À quoi sert la FAQ ?"
+    ],
+    "answers": [
+      "Pour que l’acheteur comprenne précisément ce qu’il reçoit.",
+      "Une information réelle, vérifiable et présentée sans exagération.",
+      "À répondre aux objections et questions pratiques avant l’achat."
+    ]
+  },
+  {
+    "title": "Créer une offre",
+    "desc": "Assembler cible, problème, transformation, livrables, limites et prix dans une proposition cohérente.",
+    "sections": [
+      {
+        "title": "18.1 — La cible",
+        "text": "Une offre gagne en précision lorsqu’elle définit pour qui elle est faite. Le niveau, le secteur et le contexte influencent les besoins."
+      },
+      {
+        "title": "18.2 — Le problème",
+        "text": "Décris le problème avec les mots du client et ses conséquences concrètes. Cela évite de vendre une technologie plutôt qu’une solution."
+      },
+      {
+        "title": "18.3 — La transformation",
+        "text": "Décris ce qui sera différent après l’utilisation de l’offre : un processus plus clair, une compétence acquise, un livrable terminé ou un workflow fonctionnel."
+      },
+      {
+        "title": "18.4 — Livrables et limites",
+        "text": "Liste ce qui est inclus et ce qui ne l’est pas. Les limites évitent les malentendus et facilitent le calcul du prix."
+      }
+    ],
+    "exercise": "Exercice : écris une offre d’une page avec cible, problème, transformation, livrables, limites, prix et conditions.",
+    "quiz": [
+      "Pourquoi définir une cible ?",
+      "Quelle différence entre problème et transformation ?",
+      "Pourquoi préciser les limites ?"
+    ],
+    "answers": [
+      "Pour adapter le message et la solution aux besoins réels.",
+      "Le problème décrit la situation à résoudre ; la transformation décrit le résultat recherché.",
+      "Pour éviter les malentendus et cadrer le travail."
+    ]
+  },
+  {
+    "title": "Recherche d’idées business",
+    "desc": "Trouver des idées à partir de problèmes réels et tester rapidement les hypothèses.",
+    "sections": [
+      {
+        "title": "19.1 — Partir des problèmes",
+        "text": "Une idée intéressante commence souvent par une frustration répétée : temps perdu, tâche complexe, coût, manque d’information ou processus inefficace."
+      },
+      {
+        "title": "19.2 — Collecter des signaux",
+        "text": "Les avis, discussions, retours clients et comportements peuvent révéler des problèmes. Les signaux doivent être vérifiés et replacés dans leur contexte."
+      },
+      {
+        "title": "19.3 — Analyser l’opportunité",
+        "text": "Compare concurrence, difficulté technique, distribution, coût, différenciation et fréquence du problème. Une idée facile à construire n’est pas forcément utile."
+      },
+      {
+        "title": "19.4 — Tester",
+        "text": "Le test minimal doit répondre à la question la plus importante avec le moins de ressources possible : page de présentation, prototype, entretien, démonstration ou petite expérience selon le cas."
+      }
+    ],
+    "exercise": "Exercice : liste dix problèmes d’un secteur, sélectionne-en trois et définis un test minimal pour chacun.",
+    "quiz": [
+      "Pourquoi partir d’un problème ?",
+      "Qu’est-ce qu’un test minimal ?",
+      "Que faire si le test invalide l’idée ?"
+    ],
+    "answers": [
+      "Parce qu’un problème réel donne une hypothèse de besoin à vérifier.",
+      "Une expérience simple conçue pour apprendre rapidement quelque chose d’important.",
+      "Modifier l’hypothèse, le public ou la solution, voire abandonner l’idée."
+    ]
+  },
+  {
+    "title": "L’IA et la productivité",
+    "desc": "Créer un système personnel pour réduire le travail répétitif tout en conservant le jugement humain.",
+    "sections": [
+      {
+        "title": "20.1 — Cartographier ses tâches",
+        "text": "Observe une semaine de travail ou d’étude et liste les tâches récurrentes. Mesure approximativement le temps et identifie celles qui se répètent."
+      },
+      {
+        "title": "20.2 — Quatre catégories",
+        "text": "Classe chaque tâche : automatiser, assister avec l’IA, simplifier ou conserver humaine. Les tâches nécessitant jugement, responsabilité ou contexte humain ne doivent pas être automatisées par défaut."
+      },
+      {
+        "title": "20.3 — Standardiser",
+        "text": "Crée des prompts, modèles, checklists et conventions de nommage réutilisables. Le vrai gain vient souvent du système, pas d’une conversation isolée."
+      },
+      {
+        "title": "20.4 — Mesurer",
+        "text": "Compare temps, qualité et erreurs avant/après. Un workflow n’est pas meilleur simplement parce qu’il est plus rapide."
+      }
+    ],
+    "exercise": "Exercice : choisis une tâche hebdomadaire, mesure son temps puis conçois un workflow IA et définis les indicateurs à comparer.",
+    "quiz": [
+      "Pourquoi mesurer avant et après ?",
+      "Quelles sont les quatre catégories ?",
+      "Pourquoi certaines tâches doivent-elles rester humaines ?"
+    ],
+    "answers": [
+      "Pour vérifier que le gain est réel et qu’il ne dégrade pas la qualité.",
+      "Automatiser, assister, simplifier, garder humain.",
+      "Parce qu’elles peuvent nécessiter jugement, responsabilité, contexte ou validation."
+    ]
+  },
+  {
+    "title": "Les erreurs à éviter",
+    "desc": "Reconnaître les erreurs de méthode, de sécurité, de vérification et de communication.",
+    "sections": [
+      {
+        "title": "21.1 — Prompt trop vague",
+        "text": "Une demande imprécise donne souvent une réponse générique. Ajoute objectif, contexte, contraintes et format."
+      },
+      {
+        "title": "21.2 — Confiance aveugle",
+        "text": "Une sortie convaincante peut être incorrecte. Pour les informations importantes, vérifie les sources et les calculs."
+      },
+      {
+        "title": "21.3 — Sur-automatisation",
+        "text": "Automatiser une mauvaise procédure amplifie ses défauts. Commence par comprendre et simplifier le processus."
+      },
+      {
+        "title": "21.4 — Données sensibles",
+        "text": "Ne transmets pas de données confidentielles ou personnelles à un service sans comprendre les règles applicables et les protections utilisées."
+      },
+      {
+        "title": "21.5 — Promesses irréalistes",
+        "text": "Une formation ou un outil peut développer des compétences et ouvrir des possibilités, mais aucune méthode sérieuse ne garantit richesse, ventes ou réussite."
+      }
+    ],
+    "exercise": "Exercice : réalise un pré-mortem de ton projet. Imagine qu’il a échoué et liste dix causes possibles puis les mesures préventives.",
+    "quiz": [
+      "Quel est le danger d’automatiser une mauvaise procédure ?",
+      "Que faire avec une information importante produite par l’IA ?",
+      "Pourquoi éviter les promesses de richesse garantie ?"
+    ],
+    "answers": [
+      "L’erreur peut être reproduite à grande échelle.",
+      "La vérifier avec une source ou un contrôle approprié.",
+      "Parce que les résultats dépendent du contexte, du marché, de l’exécution et de nombreux facteurs non contrôlables."
+    ]
+  },
+  {
+    "title": "Le workflow professionnel IA",
+    "desc": "Assembler brief, recherche, production, contrôle, livraison et archivage dans un processus reproductible.",
+    "sections": [
+      {
+        "title": "22.1 — Le brief",
+        "text": "Définis objectif, audience, contexte, contraintes et critères de réussite. Le brief devient la référence contre laquelle tu contrôles le résultat."
+      },
+      {
+        "title": "22.2 — Recherche",
+        "text": "Collecte les informations nécessaires et distingue les faits vérifiés des hypothèses. Ne demande pas à l’IA de cacher les incertitudes."
+      },
+      {
+        "title": "22.3 — Production",
+        "text": "Utilise prompts, modèles et outils adaptés. Pour une tâche complexe, travaille par étapes plutôt que par génération massive."
+      },
+      {
+        "title": "22.4 — Contrôle",
+        "text": "Contrôle les faits, la cohérence, la conformité au brief, le ton et la qualité. Selon le projet, ajoute une seconde validation humaine."
+      },
+      {
+        "title": "22.5 — Livraison et archivage",
+        "text": "Livre la version validée et conserve les éléments utiles : prompts, décisions, versions et procédures. Cela facilite la reproduction et l’amélioration."
+      }
+    ],
+    "exercise": "Exercice : crée un workflow professionnel complet pour une présentation ou une campagne marketing.",
+    "quiz": [
+      "Que doit contenir un brief ?",
+      "Pourquoi séparer production et contrôle ?",
+      "À quoi sert l’archivage ?"
+    ],
+    "answers": [
+      "Objectif, audience, contexte, contraintes et critères de réussite.",
+      "Pour éviter que la personne qui produit considère automatiquement son propre résultat comme correct.",
+      "À reproduire, diagnostiquer et améliorer le processus."
+    ]
+  },
+  {
+    "title": "Le projet final",
+    "desc": "Construire un projet IA complet en appliquant les méthodes des 23 modules précédents.",
+    "sections": [
+      {
+        "title": "23.1 — Problème et cible",
+        "text": "Choisis un problème concret et définis les personnes concernées. Évite de commencer par l’outil : commence par la situation à améliorer."
+      },
+      {
+        "title": "23.2 — Solution et workflow",
+        "text": "Décris ce que ton système fait, ce qu’il ne fait pas, les outils utilisés et chaque étape du processus."
+      },
+      {
+        "title": "23.3 — Contrôle et modèle économique",
+        "text": "Définis les étapes nécessitant une validation, puis établis une hypothèse de coût et de prix si le projet est commercial. Présente-les comme des hypothèses à tester."
+      },
+      {
+        "title": "23.4 — Prototype et test",
+        "text": "Construis la version la plus petite qui permet de montrer le fonctionnement. Définis ce que tu veux apprendre grâce au test et comment tu interpréteras le résultat."
+      }
+    ],
+    "exercise": "Exercice final : rédige un dossier avec problème, client, solution, outils, workflow, contrôle humain, coût, hypothèse de prix, acquisition et test. Prépare ensuite une démonstration.",
+    "quiz": [
+      "Quels sont les éléments minimum du projet final ?",
+      "Pourquoi le prototype doit-il être petit ?",
+      "Que doit mesurer le test ?"
+    ],
+    "answers": [
+      "Problème, cible, solution, outils, workflow, contrôle, hypothèses économiques et test.",
+      "Pour apprendre rapidement sans investir inutilement dans une solution complète.",
+      "La question principale de validation et les signaux permettant de confirmer ou modifier l’hypothèse."
+    ]
+  },
+  {
+    "title": "La compétence la plus importante",
+    "desc": "Construire une méthode durable : problème, objectif, décomposition, outil, vérification, amélioration et système.",
+    "sections": [
+      {
+        "title": "24.1 — Les outils changent",
+        "text": "Les modèles et interfaces évoluent rapidement. Une personne dépendante d’un seul outil peut perdre ses repères. Une méthode de résolution de problème est plus durable."
+      },
+      {
+        "title": "24.2 — Formuler le problème",
+        "text": "Avant d’ouvrir une IA, écris ce qui doit changer. Un problème clair permet de choisir une solution et de mesurer le résultat."
+      },
+      {
+        "title": "24.3 — Expérimenter et vérifier",
+        "text": "Construis rapidement une première version, teste-la, cherche les erreurs et vérifie les éléments importants. L’objectif n’est pas de tout prévoir, mais d’apprendre vite et proprement."
+      },
+      {
+        "title": "24.4 — Transformer les apprentissages en système",
+        "text": "Conserve les prompts efficaces, workflows, checklists et règles de vérification. Tu transformes ainsi une expérience ponctuelle en méthode réutilisable."
+      }
+    ],
+    "exercise": "Exercice final de synthèse : crée ton propre système IA sur une page avec trois outils, cinq prompts réutilisables, deux workflows, tes règles de vérification et ton prochain projet.",
+    "quiz": [
+      "Quelle compétence reste utile lorsque les outils changent ?",
+      "Quelle est la séquence de travail Mastery AI ?",
+      "Pourquoi conserver prompts et workflows ?"
+    ],
+    "answers": [
+      "La capacité à définir un problème, construire une solution et vérifier son résultat.",
+      "Comprendre → définir → décomposer → choisir → construire → vérifier → améliorer → systématiser → mesurer.",
+      "Pour transformer une expérience en méthode reproductible et améliorer progressivement ses résultats."
+    ]
+  }
+]
