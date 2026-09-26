@@ -10,6 +10,144 @@
 @media(max-width:850px){.features{grid-template-columns:repeat(2,1fr)}.modules{grid-template-columns:repeat(2,1fr)}.journey{grid-template-columns:1fr}}
 @media(max-width:600px){.features,.modules{grid-template-columns:1fr}.hero h1{letter-spacing:-3px}.section-title{display:block}.section-title p{margin-top:8px}.close{margin-left:calc(100% - 45px)}.hero{padding-top:55px}}
 </style>
+
+<style>
+.social-proof{max-width:1180px;margin:80px auto;padding:64px 28px;border:1px solid rgba(255,255,255,.09);border-radius:28px;background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));box-shadow:0 24px 80px rgba(0,0,0,.22)}
+.social-proof .section-kicker{letter-spacing:.14em;font-size:.75rem;font-weight:800;opacity:.62;margin-bottom:14px}
+.social-proof h2{margin:0;font-size:clamp(2rem,4vw,3.4rem);line-height:1.04}
+.social-intro{max-width:700px;opacity:.68;font-size:1rem;line-height:1.65;margin:18px 0 30px}
+.community-stat{display:flex;align-items:baseline;gap:12px;margin:26px 0 34px}
+.stat-number{font-size:clamp(2.2rem,5vw,4rem);font-weight:900;letter-spacing:-.06em}
+.stat-label{opacity:.62}
+.profiles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.profile-card{padding:24px;border-radius:22px;border:1px solid rgba(255,255,255,.08);background:rgba(0,0,0,.16);transition:transform .2s ease,border-color .2s ease}
+.profile-card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.18)}
+.profile-avatar{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:1.2rem;background:rgba(255,255,255,.10);margin-bottom:16px}
+.profile-meta{display:flex;flex-direction:column;gap:4px}
+.profile-meta strong{font-size:1.08rem}.profile-meta span{font-size:.82rem;opacity:.55}
+.profile-card p{font-size:.94rem;line-height:1.65;opacity:.78;min-height:105px}
+.profile-tags{display:flex;gap:7px;flex-wrap:wrap}
+.profile-tags span{font-size:.72rem;padding:6px 9px;border-radius:999px;background:rgba(255,255,255,.07);opacity:.75}
+.trust-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}
+.trust-row div{padding:18px;border-radius:18px;background:rgba(255,255,255,.035);text-align:center}
+.trust-row b{display:block;font-size:1.25rem}.trust-row span{display:block;font-size:.76rem;opacity:.52;margin-top:4px}
+@media(max-width:800px){.profiles-grid{grid-template-columns:1fr}.trust-row{grid-template-columns:repeat(2,1fr)}.social-proof{margin:50px 14px;padding:38px 18px}}
+</style>
+
+
+<style>
+.wealth-hero{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 26px;margin:30px 0 18px;border-radius:20px;background:linear-gradient(110deg,rgba(130,90,255,.16),rgba(255,255,255,.035));border:1px solid rgba(255,255,255,.09)}
+.wealth-hero strong{display:block;font-size:clamp(1.05rem,2vw,1.35rem);margin-top:7px}
+.wealth-label,.join-kicker{font-size:.68rem;font-weight:900;letter-spacing:.15em;opacity:.55}
+.wealth-arrow{font-size:2rem;opacity:.6}
+.profile-number{margin:18px 0 4px;font-size:1.45rem;font-weight:900;letter-spacing:-.04em}
+.join-banner{display:flex;justify-content:space-between;align-items:center;gap:28px;margin-top:20px;padding:30px;border-radius:24px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.08)}
+.join-banner h3{margin:7px 0 8px;font-size:clamp(1.5rem,3vw,2.2rem)}
+.join-banner p{margin:0;max-width:650px;line-height:1.6;opacity:.62}
+.join-button{flex:none;text-decoration:none;color:inherit;font-weight:800;padding:14px 18px;border-radius:13px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.12);transition:transform .2s,background .2s}
+.join-button:hover{transform:translateY(-2px);background:rgba(255,255,255,.15)}
+.source-note{margin:22px 0 0;font-size:.68rem;line-height:1.5;opacity:.38}
+@media(max-width:800px){.join-banner{flex-direction:column;align-items:flex-start}.join-button{width:100%;text-align:center;box-sizing:border-box}}
+</style>
+
+
+<style>
+:root{
+  --bg:#f7f9ff;
+  --surface:#ffffff;
+  --surface2:#f0f4ff;
+  --text:#10203a;
+  --muted:#64748b;
+  --primary:#6657f5;
+  --primary2:#238cff;
+  --cyan:#43c6f6;
+  --pink:#e879f9;
+  --green:#18b981;
+  --border:rgba(16,32,58,.09);
+}
+html{scroll-behavior:smooth}
+body{
+  background:
+    radial-gradient(circle at 8% 4%,rgba(67,198,246,.15),transparent 28%),
+    radial-gradient(circle at 92% 8%,rgba(232,121,249,.13),transparent 28%),
+    var(--bg)!important;
+  color:var(--text)!important;
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;
+  background:linear-gradient(135deg,rgba(102,87,245,.025),rgba(35,140,255,.025));
+}
+nav,.nav,.navbar,header{
+  background:rgba(255,255,255,.86)!important;
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--border)!important;
+}
+a{transition:.2s ease}
+button,.btn,.cta{
+  background:linear-gradient(135deg,var(--primary),var(--primary2))!important;
+  border:none!important;
+  box-shadow:0 12px 28px rgba(102,87,245,.22);
+}
+.hero,.hero-section{
+  background:linear-gradient(135deg,#effbff 0%,#f7f4ff 48%,#fff3fc 100%)!important;
+  border-radius:0 0 38px 38px;
+}
+section{
+  border-color:var(--border)!important;
+}
+.card,.feature-card,.module-card,.profile-card,.journey-card,.prompt-card{
+  background:rgba(255,255,255,.88)!important;
+  border:1px solid var(--border)!important;
+  box-shadow:0 12px 35px rgba(30,50,90,.07)!important;
+}
+.card:hover,.feature-card:hover,.module-card:hover,.profile-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 18px 45px rgba(60,70,130,.12)!important;
+}
+h1,h2,h3,h4{color:var(--text)!important}
+p,.muted,.subtitle{color:var(--muted)!important}
+.social-proof{
+  background:linear-gradient(135deg,#edfaff,#f6f2ff 52%,#fff1fb)!important;
+  border:1px solid rgba(102,87,245,.10)!important;
+  box-shadow:0 25px 70px rgba(60,80,150,.10)!important;
+}
+.social-proof .section-kicker,.section-kicker{
+  color:#5b55d6!important;
+}
+.wealth-hero{
+  background:linear-gradient(110deg,rgba(102,87,245,.10),rgba(67,198,246,.11),rgba(232,121,249,.08))!important;
+}
+.profile-avatar{
+  background:linear-gradient(135deg,#dbeafe,#ede9fe)!important;
+  color:#4f46e5!important;
+}
+.profile-tags span{
+  background:#eef2ff!important;
+  color:#4f46e5!important;
+}
+.trust-row div{
+  background:rgba(255,255,255,.75)!important;
+}
+.join-banner{
+  background:linear-gradient(120deg,#182848,#3b2b80)!important;
+  border:none!important;
+}
+.join-banner h3,.join-banner p,.join-banner .join-kicker{color:#fff!important}
+.join-button{
+  background:linear-gradient(135deg,#8b5cf6,#22a8f5)!important;
+  color:#fff!important;
+}
+.source-note{color:var(--muted)!important}
+input,textarea,select{
+  background:#fff!important;color:var(--text)!important;
+  border:1px solid var(--border)!important;
+}
+@media(max-width:700px){
+  body{font-size:15px}
+  .hero,.hero-section{border-radius:0 0 24px 24px}
+}
+</style>
+
 </head>
 <body>
 <nav class="nav"><div class="logo">Mastery <span>AI</span></div><a href="#programme">Voir le programme ↓</a></nav>
@@ -40,6 +178,93 @@
     <div class="card"><span class="number">03 — CONSTRUIRE</span><h3>Ton projet final</h3><p>Choisis un problème, imagine une solution et construis ton workflow IA.</p></div>
   </div>
 </section>
+
+
+
+<section class="audience-strip" style="max-width:1180px;margin:38px auto;padding:34px 28px;text-align:center;">
+  <div style="display:inline-block;padding:7px 12px;border-radius:999px;background:#e9e7ff;color:#5146c9;font-size:.75rem;font-weight:800;">
+    POUR TOUS LES PROFILS
+  </div>
+  <h2 style="margin:14px 0 8px;">Que tu sois étudiant, salarié, créateur ou entrepreneur.</h2>
+  <p style="max-width:720px;margin:auto;color:#64748b;">
+    Aucun niveau technique nécessaire. Apprends à utiliser l’IA pour gagner du temps,
+    créer, automatiser et transformer tes idées en projets concrets.
+  </p>
+</section>
+<section class="social-proof" id="communaute">
+  <div class="section-kicker">LES PARCOURS QUI INSPIRENT L’IA</div>
+  <h2>Rejoins ceux qui construisent l’avenir avec l’IA.</h2>
+  <p class="social-intro">
+    Découvre les parcours d’entrepreneurs qui ont transformé l’intelligence artificielle en entreprises à très forte valeur.
+    Puis développe tes propres compétences avec Mastery AI.
+  </p>
+
+  <div class="wealth-hero">
+    <div>
+      <span class="wealth-label">INSPIRATION RÉELLE</span>
+      <strong>De l’idée → à la compétence → au projet → à l’entreprise.</strong>
+    </div>
+    <span class="wealth-arrow">↗</span>
+  </div>
+
+  <div class="profiles-grid">
+    <article class="profile-card">
+      <div class="profile-avatar">AW</div>
+      <div class="profile-meta">
+        <strong>Alexandr Wang</strong>
+        <span>Scale AI · Meta</span>
+      </div>
+      <div class="profile-number">≈ 3,2 Md$*</div>
+      <p>Co-fondateur de Scale AI. Forbes indique une fortune issue de l’intelligence artificielle et retrace son parcours de la création de Scale à son rôle chez Meta.</p>
+      <div class="profile-tags"><span>IA</span><span>Startup</span><span>Scale AI</span></div>
+    </article>
+
+    <article class="profile-card">
+      <div class="profile-avatar">LG</div>
+      <div class="profile-meta">
+        <strong>Lucy Guo</strong>
+        <span>Scale AI · Passes</span>
+      </div>
+      <div class="profile-number">≈ 1,5 Md$*</div>
+      <p>Co-fondatrice de Scale AI puis fondatrice de Passes. Forbes indique que l’essentiel de sa fortune provient de sa participation dans Scale AI.</p>
+      <div class="profile-tags"><span>IA</span><span>Produit</span><span>Entrepreneuriat</span></div>
+    </article>
+
+    <article class="profile-card">
+      <div class="profile-avatar">SH</div>
+      <div class="profile-meta">
+        <strong>Steven Hao</strong>
+        <span>Cognition · Devin</span>
+      </div>
+      <div class="profile-number">≈ 5,8 Md$*</div>
+      <p>Co-fondateur et CTO de Cognition, l’entreprise derrière Devin, un agent IA de programmation. Forbes attribue sa fortune à l’IA et aux logiciels.</p>
+      <div class="profile-tags"><span>Devin</span><span>Agents IA</span><span>Code</span></div>
+    </article>
+  </div>
+
+  <div class="join-banner">
+    <div>
+      <span class="join-kicker">À TON TOUR</span>
+      <h3>Apprends les compétences qui ouvrent de nouvelles possibilités avec l’IA.</h3>
+      <p>Maîtrise les outils, crée des projets et découvre comment l’IA peut devenir une compétence professionnelle et un levier pour entreprendre.</p>
+    </div>
+    <a class="join-button" href="#modules">Commencer à apprendre <span>→</span></a>
+  </div>
+
+  <div class="trust-row">
+    <div><b>24</b><span>modules</span></div>
+    <div><b>20+</b><span>prompts bonus</span></div>
+    <div><b>1</b><span>projet final</span></div>
+    <div><b>10 €</b><span>accès complet</span></div>
+  </div>
+
+  <p class="source-note">
+    *Fortunes indicatives publiées par Forbes en septembre 2026 et susceptibles d’évoluer.
+    Ces parcours sont présentés comme inspiration : Mastery AI ne garantit pas de devenir riche.
+  </p>
+</section>
+
+
 <section class="section" id="programme">
   <div class="section-title"><h2>Les 24 modules</h2><p>Avance à ton rythme et garde ta progression enregistrée sur cet appareil.</p></div>
   <div class="progress-box"><div class="bar"><i id="bar"></i></div><div class="prog" id="prog">0 / 24 terminés</div></div>
